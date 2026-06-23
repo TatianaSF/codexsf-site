@@ -38,11 +38,11 @@ a {
 }
 
 .tatiana-link {
-  color: inherit;
+  color: #153d6f;
   font: inherit;
   font-weight: inherit;
   text-decoration-line: underline;
-  text-decoration-color: transparent;
+  text-decoration-color: currentColor;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
   transition:
@@ -52,7 +52,7 @@ a {
 }
 
 .tatiana-link:hover {
-  color: var(--blue);
+  color: #0d2f59;
   text-decoration-color: currentColor;
   text-underline-offset: 0.24em;
 }
