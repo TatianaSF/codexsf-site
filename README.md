@@ -33,14 +33,21 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Production Build
+## Static Export Build
 
 ```powershell
 npm run build
-npm run start
 ```
 
-The project uses a Vercel-friendly Next.js App Router structure.
+The project uses Next.js Static Export for GitHub Pages. `npm run build`
+creates the static site in `out/`.
+
+## Public Documentation
+
+- [Public site architecture](docs/public-site-architecture.md)
+- [GitHub Pages deployment](docs/github-pages-deployment.md)
+- [Content guide](docs/content-guide.md)
+- [Public safety rules](docs/public-safety-rules.md)
 
 ## Edit First
 
