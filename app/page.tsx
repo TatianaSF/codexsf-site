@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TatianaLink } from "@/components/TatianaLink";
 import { getCollection } from "@/lib/content";
 
 export default function Home() {
@@ -157,7 +158,9 @@ export default function Home() {
       <section className="section">
         <div className="section-inner">
           <div className="section-title" style={{ marginBottom: 24 }}>
-            <h2>Created by Tatiana SF</h2>
+            <h2>
+              Created by <TatianaLink />
+            </h2>
             <p>
               A practical public home for San Francisco builders, community
               hackathons, and reusable Codex workflows.

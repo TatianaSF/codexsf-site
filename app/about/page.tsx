@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TatianaLink } from "@/components/TatianaLink";
 
 export const metadata: Metadata = {
   title: "About",
@@ -34,7 +35,9 @@ export default function AboutPage() {
             </p>
           </article>
           <article className="card">
-            <h3>Created by Tatiana SF</h3>
+            <h3>
+              Created by <TatianaLink />
+            </h3>
             <p>
               Codex SF is created as a practical, community-friendly home for
               San Francisco builders and hackathon organizers.

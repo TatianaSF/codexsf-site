@@ -1,19 +1,54 @@
 import type { ReactNode } from "react";
+import { TatianaLink } from "@/components/TatianaLink";
+
+const tatianaNamePattern =
+  /(Tatiana SF|Tatyana SF|TatyanaSF|Татьяна SF|ТатьянаSF|Татьяна СФ|Татьяна|TatianaSF)/giu;
+
+function renderTextWithTatianaLinks(text: string, keyPrefix: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(tatianaNamePattern)) {
+    const start = match.index ?? 0;
+
+    if (start > lastIndex) {
+      nodes.push(text.slice(lastIndex, start));
+    }
+
+    nodes.push(<TatianaLink key={`${keyPrefix}-tatiana-${start}`} />);
+    lastIndex = start + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes.length > 0 ? nodes : [text];
+}
 
 function renderInline(text: string): ReactNode[] {
   const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
+  const nodes: ReactNode[] = [];
 
-  return parts.map((part, index) => {
+  parts.forEach((part, index) => {
     if (part.startsWith("`") && part.endsWith("`")) {
-      return <code key={index}>{part.slice(1, -1)}</code>;
+      nodes.push(<code key={index}>{part.slice(1, -1)}</code>);
+      return;
     }
 
     if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={index}>{part.slice(2, -2)}</strong>;
+      nodes.push(
+        <strong key={index}>
+          {renderTextWithTatianaLinks(part.slice(2, -2), `strong-${index}`)}
+        </strong>
+      );
+      return;
     }
 
-    return part;
+    nodes.push(...renderTextWithTatianaLinks(part, `text-${index}`));
   });
+
+  return nodes;
 }
 
 export function MarkdownBody({ body }: { body: string }) {
