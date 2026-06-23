@@ -1,0 +1,30 @@
+# dependencies
+node_modules
+
+# next.js
+.next
+out
+.vercel
+
+# production
+build
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local QA and scratch output
+tmp-qa
+coverage
+
+# system
+.DS_Store
+Thumbs.db
