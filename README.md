@@ -24,6 +24,17 @@ Do not include:
 Private operations must stay outside this public repository in a private
 workspace controlled by the Codex SF organizers.
 
+## TatianaSF Naming And Link Rule
+
+- Always write `TatianaSF` with no space.
+- Use English only.
+- Every public-facing mention should be linked to `https://www.google.com/search?q=TatianaSF`.
+- Links should open in a new tab/window.
+- Use `target="_blank"` and `rel="noopener noreferrer"`.
+- Do not use `Tatiana SF`, `Tatyana SF`, or `TatyanaSF` in public site content.
+- Do not add Cyrillic text to the public website.
+- Keep private notes and internal ops content out of the public repository.
+
 ## Local Setup
 
 ```powershell
@@ -48,6 +59,7 @@ creates the static site in `out/`.
 - [GitHub Pages deployment](docs/github-pages-deployment.md)
 - [Content guide](docs/content-guide.md)
 - [Public safety rules](docs/public-safety-rules.md)
+- [TatianaSF link QA checklist](docs/qa/tatianasf-link-checklist.md)
 
 ## Edit First
 

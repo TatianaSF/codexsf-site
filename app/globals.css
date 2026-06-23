@@ -37,6 +37,33 @@ a {
   text-decoration: none;
 }
 
+.tatiana-link {
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition:
+    color 160ms ease,
+    text-decoration-color 160ms ease,
+    text-underline-offset 160ms ease;
+}
+
+.tatiana-link:hover {
+  color: var(--blue);
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.24em;
+}
+
+.tatiana-link:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgba(36, 107, 254, 0.26);
+  outline-offset: 3px;
+  text-decoration-color: currentColor;
+}
+
 img {
   display: block;
   max-width: 100%;
