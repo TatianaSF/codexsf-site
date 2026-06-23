@@ -658,6 +658,15 @@ img {
   font-weight: 700;
 }
 
+.footer-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.footer-copy p {
+  margin: 0;
+}
+
 @media (max-width: 960px) {
   .nav-shell {
     display: grid;
