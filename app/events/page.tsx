@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { ContentSection } from "@/components/ContentSection";
 import { getCollection } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Events",
-  description: "Upcoming events, public recaps, highlights, and demo projects."
-};
+  description:
+    "Upcoming events, public recaps, highlights, and demo projects from the Codex SF builder community.",
+  path: "/events/"
+});
 
 export default function EventsPage() {
   const items = getCollection("events");

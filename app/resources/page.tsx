@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { ContentSection } from "@/components/ContentSection";
 import { getCollection } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Resources",
-  description: "Public templates and organizer resources for Codex SF events."
-};
+  description:
+    "Public templates and organizer resources for community hackathons, speakers, volunteers, judging, promotion, and follow-up.",
+  path: "/resources/"
+});
 
 export default function ResourcesPage() {
   const items = getCollection("resources");
@@ -25,14 +28,18 @@ export default function ResourcesPage() {
         <div className="section-inner content-layout">
           <nav className="content-nav" aria-label="Resource sections">
             {items.map((item) => (
-              <a href={`#${item.slug}`} key={item.slug}>
+              <a href={`/resources/${item.slug}`} key={item.slug}>
                 {item.title}
               </a>
             ))}
           </nav>
           <div className="article-list">
             {items.map((item) => (
-              <ContentSection item={item} key={item.slug} />
+              <ContentSection
+                item={item}
+                href={`/resources/${item.slug}`}
+                key={item.slug}
+              />
             ))}
           </div>
         </div>

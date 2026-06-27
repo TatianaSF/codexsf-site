@@ -16,6 +16,7 @@ export function SiteFooter() {
           <Link href="/events">Events</Link>
           <Link href="/resources">Resources</Link>
           <Link href="/community">Community</Link>
+          <Link href="/tatianasf">Creator</Link>
         </div>
       </div>
     </footer>

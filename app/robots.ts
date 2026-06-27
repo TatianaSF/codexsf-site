@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-static";
+
+const siteHost = new URL(SITE_URL).hostname;
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +11,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://codexsf.com/sitemap.xml"
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: siteHost
   };
 }

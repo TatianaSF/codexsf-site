@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import { getCollection } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Codex SF",
+  description:
+    "Community hub for San Francisco builders, hackathons, and practical Codex workflows.",
+  path: "/",
+  absoluteTitle: true
+});
 
 export default function Home() {
   const hackkit = getCollection("hackkit").slice(0, 4);
@@ -59,7 +68,7 @@ export default function Home() {
           </div>
           <div className="steps">
             {hackkit.map((item, index) => (
-              <Link className="step-row" href={`/hackkit#${item.slug}`} key={item.slug}>
+              <Link className="step-row" href={`/hackkit/${item.slug}`} key={item.slug}>
                 <span className="step-number">{index + 1}</span>
                 <span>
                   <h3>{item.title}</h3>
@@ -115,7 +124,7 @@ export default function Home() {
           </div>
           <div className="grid three">
             {resources.map((item) => (
-              <Link className="card" href={`/resources#${item.slug}`} key={item.slug}>
+              <Link className="card" href={`/resources/${item.slug}`} key={item.slug}>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </Link>
@@ -169,6 +178,11 @@ export default function Home() {
           <div className="callout">
             <strong>Public-safe by default.</strong> Private operations, budgets,
             assignments, and unpublished plans belong outside this public repository.
+          </div>
+          <div className="article-actions">
+            <Link className="button secondary" href="/tatianasf">
+              Creator profile
+            </Link>
           </div>
         </div>
       </section>

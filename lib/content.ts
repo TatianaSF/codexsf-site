@@ -11,6 +11,8 @@ export type ContentItem = {
   body: string;
 };
 
+export type ContentCollection = "events" | "hackkit" | "resources";
+
 const contentRoot = path.join(process.cwd(), "content");
 
 function parseFrontmatter(file: string) {
@@ -41,7 +43,7 @@ function parseFrontmatter(file: string) {
   };
 }
 
-export function getCollection(collection: "events" | "hackkit" | "resources") {
+export function getCollection(collection: ContentCollection) {
   const directory = path.join(contentRoot, collection);
 
   return fs
@@ -64,4 +66,8 @@ export function getCollection(collection: "events" | "hackkit" | "resources") {
       } satisfies ContentItem;
     })
     .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
+}
+
+export function getContentItem(collection: ContentCollection, slug: string) {
+  return getCollection(collection).find((item) => item.slug === slug);
 }

@@ -60,6 +60,8 @@ creates the static site in `out/`.
 - [Content guide](docs/content-guide.md)
 - [Public safety rules](docs/public-safety-rules.md)
 - [TatianaSF link QA checklist](docs/qa/tatianasf-link-checklist.md)
+- [SEO documentation](docs/seo/README.md)
+- [Google Tag Manager](docs/analytics/google-tag-manager.md)
 
 ## Edit First
 

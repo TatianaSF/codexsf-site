@@ -9,7 +9,9 @@ const navItems = [
   ["Events", "/events"],
   ["Resources", "/resources"],
   ["Community", "/community"],
-  ["About", "/about"]
+  ["Creator", "/tatianasf"],
+  ["About", "/about"],
+  ["Log", "/log"]
 ] as const;
 
 function OpenAIIcon() {

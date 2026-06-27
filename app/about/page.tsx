@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About",
-  description: "About Codex SF and HackKit."
-};
+  description:
+    "About Codex SF, HackKit, TatianaSF, and the public community hub for San Francisco builders.",
+  path: "/about/"
+});
 
 export default function AboutPage() {
   return (
@@ -42,6 +46,11 @@ export default function AboutPage() {
               Codex SF is created as a practical, community-friendly home for
               San Francisco builders and hackathon organizers.
             </p>
+            <div className="article-actions">
+              <Link className="button secondary" href="/tatianasf">
+                Creator profile
+              </Link>
+            </div>
           </article>
           <article className="card">
             <h3>HackKit first</h3>

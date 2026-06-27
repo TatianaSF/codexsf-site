@@ -1,24 +1,61 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleTagManager } from "@/components/GoogleTagManager";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteVersionBadge } from "@/components/SiteVersionBadge";
+import {
+  DEFAULT_OG_IMAGE,
+  GOOGLE_SITE_VERIFICATION,
+  GOOGLE_TAG_MANAGER_ID,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+  serializeJsonLd,
+  siteJsonLd
+} from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codexsf.com"),
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: "Codex SF",
-    template: "%s | Codex SF"
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`
   },
-  description:
-    "Community hub for builders, hackathons, and practical Codex workflows in San Francisco.",
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
-    title: "Codex SF",
-    description:
-      "Community hub for builders, hackathons, and practical Codex workflows in San Francisco.",
-    url: "https://codexsf.com",
-    siteName: "Codex SF",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
+    images: [DEFAULT_OG_IMAGE],
+    locale: "en_US",
     type: "website"
-  }
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE.url]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+  verification: GOOGLE_SITE_VERIFICATION
+    ? {
+        google: GOOGLE_SITE_VERIFICATION
+      }
+    : undefined
 };
 
 export default function RootLayout({
@@ -29,9 +66,15 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
+        <GoogleTagManager containerId={GOOGLE_TAG_MANAGER_ID} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(siteJsonLd) }}
+        />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <SiteVersionBadge />
       </body>
     </html>
   );

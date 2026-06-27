@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
 const paths = [
   {
@@ -28,10 +29,12 @@ const paths = [
   }
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Community",
-  description: "Join Codex SF as a participant, volunteer, speaker, partner, or subscriber."
-};
+  description:
+    "Join Codex SF as a participant, volunteer, speaker, partner, or subscriber.",
+  path: "/community/"
+});
 
 export default function CommunityPage() {
   return (
