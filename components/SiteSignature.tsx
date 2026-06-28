@@ -56,11 +56,22 @@ function CodexIcon() {
   );
 }
 
-export function SiteSignature({ className }: { className?: string }) {
+type SiteSignatureProps = {
+  className?: string;
+  showMadeWith?: boolean;
+};
+
+export function SiteSignature({
+  className,
+  showMadeWith = true
+}: SiteSignatureProps) {
   const classes = ["site-signature", className].filter(Boolean).join(" ");
+  const label = showMadeWith
+    ? "Codex SF made with OpenAI Codex by TatianaSF"
+    : "Codex SF OpenAI Codex by TatianaSF";
 
   return (
-    <div className={classes} aria-label="Codex SF made with OpenAI Codex by TatianaSF">
+    <div className={classes} aria-label={label}>
       <Link className="site-signature-logo-link" href="/" aria-label="Codex SF home">
         <Image
           alt="CodexSF"
@@ -70,7 +81,7 @@ export function SiteSignature({ className }: { className?: string }) {
           width="206"
         />
       </Link>
-      <span>Made with</span>
+      {showMadeWith ? <span>Made with</span> : null}
       <OpenAIIcon />
       <strong>OpenAI</strong>
       <span className="signature-separator" aria-hidden="true" />

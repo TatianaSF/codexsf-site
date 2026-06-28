@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.9";
+export const CURRENT_VERSION = "v1.0.10";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.10",
+    date: "2026-06-28",
+    description:
+      "Removed the Made with text from the header signature while keeping the OpenAI Codex by TatianaSF credit visible."
+  },
   {
     version: "v1.0.9",
     date: "2026-06-28",
