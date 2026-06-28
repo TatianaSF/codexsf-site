@@ -97,23 +97,13 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   flex: 0 0 auto;
-  font-weight: 800;
-  font-size: 1.05rem;
 }
 
-.brand-mark {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--yellow), var(--coral));
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 900;
+.brand-logo {
+  width: 154px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -134,7 +124,8 @@ img {
   color: var(--blue);
 }
 
-.made-with-signature {
+.made-with-signature,
+.site-signature {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
@@ -149,6 +140,32 @@ img {
   font-weight: 720;
   box-shadow: 0 1px 0 rgba(16, 17, 20, 0.05);
   white-space: nowrap;
+}
+
+.site-signature {
+  overflow: visible;
+}
+
+.site-signature::-webkit-scrollbar {
+  display: none;
+}
+
+.site-signature-logo-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.site-signature-logo {
+  width: 154px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.signature-separator {
+  width: 1px;
+  height: 26px;
+  background: rgba(16, 17, 20, 0.16);
 }
 
 .signature-icon {
@@ -183,6 +200,7 @@ img {
 .mobile-nav-links a:focus-visible,
 .nav-links a:focus-visible,
 .brand:focus-visible,
+.site-signature-logo-link:focus-visible,
 .made-with-signature:focus-visible,
 .nav-cta:focus-visible,
 .button:focus-visible {
@@ -825,6 +843,7 @@ img {
 
   .nav-primary-row {
     width: 100%;
+    gap: 10px;
   }
 
   .desktop-nav {
@@ -843,9 +862,35 @@ img {
     font-size: 0.82rem;
   }
 
+  .site-signature {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100vw - 92px);
+    overflow-x: auto;
+    scrollbar-width: none;
+    min-height: 34px;
+    gap: 7px;
+    padding: 0 10px;
+    font-size: 0.82rem;
+  }
+
+  .site-signature-logo {
+    width: 132px;
+    height: 31px;
+  }
+
+  .signature-separator {
+    height: 22px;
+  }
+
   .signature-icon {
     width: 20px;
     height: 20px;
+  }
+
+  .brand-logo {
+    width: 132px;
+    height: 31px;
   }
 
   .nav-cta {

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TatianaLink } from "@/components/TatianaLink";
+import { SiteSignature } from "@/components/SiteSignature";
 import { GITHUB_REPO_URL } from "@/lib/seo";
 
 export function SiteFooter() {
@@ -7,9 +7,7 @@ export function SiteFooter() {
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-copy">
-          <p>
-            Created by <TatianaLink />. Public-safe community materials for builders.
-          </p>
+          <SiteSignature className="footer-signature" />
           <p>Made with ❤️ in San Francisco 🌉</p>
         </div>
         <div className="footer-links">

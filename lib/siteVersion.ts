@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.7";
+export const CURRENT_VERSION = "v1.0.8";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.8",
+    date: "2026-06-28",
+    description:
+      "Updated the site signature with the CodexSF logo and a single-line OpenAI Codex by TatianaSF credit."
+  },
   {
     version: "v1.0.7",
     date: "2026-06-28",
