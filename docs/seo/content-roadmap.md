@@ -76,6 +76,24 @@ Tasks:
 - Expand pages that already receive impressions.
 - Add new pages only when there is a clear audience and public-safe content.
 
+## Phase 6: TatianaSF Brand Cluster
+
+Goal: make `TatianaSF` a clear, canonical public entity connected to Codex SF
+without publishing private identity or operations details.
+
+Implemented pages:
+
+- `/tatianasf/` as the canonical creator profile.
+- `/resources/tatianasf-public-reference/` for exact public wording and spelling.
+- `/resources/codex-sf-creator-notes/` for creator and project context.
+- `/resources/san-francisco-builder-workflows/` for related workflow context.
+
+Next tasks:
+
+- Request indexing for the three new supporting resource URLs after deployment.
+- Review Search Console query data for `TatianaSF` after Google recrawls.
+- Add only public, stable external references when they exist and are approved.
+
 ## Do Not Publish
 
 - Private contacts.

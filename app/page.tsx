@@ -183,6 +183,12 @@ export default function Home() {
             <Link className="button secondary" href="/tatianasf">
               Creator profile
             </Link>
+            <Link
+              className="button secondary"
+              href="/resources/tatianasf-public-reference"
+            >
+              TatianaSF reference
+            </Link>
           </div>
         </div>
       </section>

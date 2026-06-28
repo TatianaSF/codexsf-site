@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.4";
+export const CURRENT_VERSION = "v1.0.5";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.5",
+    date: "2026-06-28",
+    description:
+      "Added the TatianaSF SEO content cluster with public reference, creator notes, and builder workflow resources."
+  },
   {
     version: "v1.0.4",
     date: "2026-06-23",

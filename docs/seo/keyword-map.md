@@ -9,10 +9,14 @@ pages.
 | --- | --- | --- | --- |
 | Codex SF | Brand lookup | `/` | High |
 | TatianaSF | Creator lookup | `/tatianasf/` | High |
+| TatianaSF Codex SF | Creator / project lookup | `/tatianasf/` | High |
+| TatianaSF public reference | Citation / spelling lookup | `/resources/tatianasf-public-reference/` | High |
+| Codex SF creator | Creator / project context | `/resources/codex-sf-creator-notes/` | Medium |
 | Codex San Francisco | Brand / local lookup | `/` | Medium |
 | San Francisco AI builders | Community discovery | `/` or `/community` | High |
 | AI builder community San Francisco | Community discovery | `/community` | High |
 | practical AI events San Francisco | Event discovery | `/events` | Medium |
+| San Francisco builder workflows | Workflow discovery | `/resources/san-francisco-builder-workflows/` | Medium |
 
 ## HackKit And Hackathon Planning
 

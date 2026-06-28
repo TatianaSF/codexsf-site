@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import {
+  absoluteUrl,
   createBreadcrumbJsonLd,
   createPageMetadata,
   serializeJsonLd,
@@ -33,6 +34,7 @@ export default function TatianaSFPage() {
         name: "Codex SF",
         url: SITE_URL
       },
+      mainEntityOfPage: absoluteUrl("/tatianasf/"),
       knowsAbout: [
         "Codex SF",
         "HackKit",
@@ -59,6 +61,29 @@ export default function TatianaSFPage() {
             Creator of Codex SF, the public hub for San Francisco builders,
             HackKit, community hackathons, and practical Codex workflows.
           </p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="section-inner narrow-content">
+          <article className="markdown-card">
+            <h2>TatianaSF and Codex SF</h2>
+            <p>
+              TatianaSF is the public creator identity connected to Codex SF, a
+              practical community hub for San Francisco builders who want useful
+              hackathons, repeatable event formats, and clear Codex workflows.
+            </p>
+            <p>
+              This page is the canonical public reference for TatianaSF on
+              Codex SF. It keeps the public story simple: creator, community,
+              HackKit, and reusable resources for builders.
+            </p>
+            <p>
+              Public pages on this site do not include private contacts,
+              budgets, assignments, credentials, or unpublished operations. The
+              purpose is to make the public work easier to find, cite, and
+              reuse.
+            </p>
+          </article>
         </div>
       </section>
       <section className="section">
@@ -104,6 +129,18 @@ export default function TatianaSFPage() {
             </Link>
             <Link className="button secondary" href="/hackkit">
               Explore HackKit
+            </Link>
+            <Link
+              className="button secondary"
+              href="/resources/tatianasf-public-reference"
+            >
+              Public reference
+            </Link>
+            <Link
+              className="button secondary"
+              href="/resources/codex-sf-creator-notes"
+            >
+              Creator notes
             </Link>
           </div>
         </div>

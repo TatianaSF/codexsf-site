@@ -7,6 +7,9 @@ Use this list after deployment when requesting indexing or checking coverage.
 ```text
 https://codexsf.com/
 https://codexsf.com/tatianasf/
+https://codexsf.com/resources/tatianasf-public-reference/
+https://codexsf.com/resources/codex-sf-creator-notes/
+https://codexsf.com/resources/san-francisco-builder-workflows/
 https://codexsf.com/resources/judging-rubric/
 https://codexsf.com/resources/run-of-show-template/
 https://codexsf.com/hackkit/organizer-checklist/
@@ -41,6 +44,9 @@ https://codexsf.com/hackkit/lessons-learned/
 https://codexsf.com/resources/volunteer-plan-template/
 https://codexsf.com/resources/speaker-instructions/
 https://codexsf.com/resources/panel-questions/
+https://codexsf.com/resources/tatianasf-public-reference/
+https://codexsf.com/resources/codex-sf-creator-notes/
+https://codexsf.com/resources/san-francisco-builder-workflows/
 https://codexsf.com/resources/judging-rubric/
 https://codexsf.com/resources/pitch-rules/
 https://codexsf.com/resources/event-checklist/

@@ -71,7 +71,7 @@ export const siteJsonLd = [
     founder: {
       "@type": "Person",
       name: "TatianaSF",
-      url: "https://www.google.com/search?q=TatianaSF"
+      url: `${SITE_URL}/tatianasf/`
     }
   }
 ] as const;
