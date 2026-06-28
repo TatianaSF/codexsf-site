@@ -551,6 +551,27 @@ img {
   color: var(--muted);
 }
 
+.card[href],
+.step-row[href],
+.action-tile[href] {
+  text-decoration-line: none;
+}
+
+.card[href] h3,
+.step-row[href] h3,
+.action-tile[href] strong {
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: auto;
+}
+
+.card[href]:hover h3,
+.step-row[href]:hover h3,
+.action-tile[href]:hover strong {
+  text-underline-offset: 0.24em;
+}
+
 .dark .card p {
   color: #cad3df;
 }

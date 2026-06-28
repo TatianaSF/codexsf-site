@@ -31,6 +31,7 @@ func main() {
 	var linkTokens int
 	var tatianaLabelViolations []string
 	var underlineRuleFound bool
+	var duplicateBlockRuleFound bool
 	var textDecorationNone []string
 
 	for _, root := range roots {
@@ -40,7 +41,7 @@ func main() {
 		}
 
 		if !info.IsDir() {
-			scanFile(root, extensions, &filesScanned, &filesWithLinks, &linkTokens, &tatianaLabelViolations, &underlineRuleFound, &textDecorationNone)
+			scanFile(root, extensions, &filesScanned, &filesWithLinks, &linkTokens, &tatianaLabelViolations, &underlineRuleFound, &duplicateBlockRuleFound, &textDecorationNone)
 			continue
 		}
 
@@ -57,7 +58,7 @@ func main() {
 				return nil
 			}
 
-			scanFile(path, extensions, &filesScanned, &filesWithLinks, &linkTokens, &tatianaLabelViolations, &underlineRuleFound, &textDecorationNone)
+			scanFile(path, extensions, &filesScanned, &filesWithLinks, &linkTokens, &tatianaLabelViolations, &underlineRuleFound, &duplicateBlockRuleFound, &textDecorationNone)
 			return nil
 		})
 		if err != nil {
@@ -70,6 +71,7 @@ func main() {
 	fmt.Printf("files_with_link_tokens=%d\n", filesWithLinks)
 	fmt.Printf("link_tokens=%d\n", linkTokens)
 	fmt.Printf("underline_rule_found=%t\n", underlineRuleFound)
+	fmt.Printf("duplicate_block_rule_found=%t\n", duplicateBlockRuleFound)
 
 	if len(tatianaLabelViolations) > 0 {
 		fmt.Println("tatianasf_markdown_link_label_violations:")
@@ -91,9 +93,14 @@ func main() {
 		fmt.Println("missing global underline rule in app/globals.css")
 		os.Exit(1)
 	}
+
+	if !duplicateBlockRuleFound {
+		fmt.Println("missing duplicate-destination card underline rule in app/globals.css")
+		os.Exit(1)
+	}
 }
 
-func scanFile(path string, extensions map[string]bool, filesScanned *int, filesWithLinks *int, linkTokens *int, tatianaLabelViolations *[]string, underlineRuleFound *bool, textDecorationNone *[]string) {
+func scanFile(path string, extensions map[string]bool, filesScanned *int, filesWithLinks *int, linkTokens *int, tatianaLabelViolations *[]string, underlineRuleFound *bool, duplicateBlockRuleFound *bool, textDecorationNone *[]string) {
 	if !extensions[strings.ToLower(filepath.Ext(path))] {
 		return
 	}
@@ -118,11 +125,47 @@ func scanFile(path string, extensions map[string]bool, filesScanned *int, filesW
 		*underlineRuleFound = true
 	}
 
-	if strings.Contains(text, "text-decoration: none") || strings.Contains(text, "text-decoration-line: none") {
-		*textDecorationNone = append(*textDecorationNone, path)
+	if path == filepath.FromSlash("app/globals.css") &&
+		strings.Contains(text, ".card[href]") &&
+		strings.Contains(text, ".step-row[href]") &&
+		strings.Contains(text, ".action-tile[href]") &&
+		strings.Contains(text, ".card[href] h3") &&
+		strings.Contains(text, ".step-row[href] h3") &&
+		strings.Contains(text, ".action-tile[href] strong") {
+		*duplicateBlockRuleFound = true
+	}
+
+	for lineNumber, line := range strings.Split(text, "\n") {
+		if strings.Contains(line, "text-decoration: none") || strings.Contains(line, "text-decoration-line: none") {
+			if path == filepath.FromSlash("app/globals.css") && duplicateBlockNoneAllowed(text, lineNumber) {
+				continue
+			}
+
+			*textDecorationNone = append(*textDecorationNone, fmt.Sprintf("%s:%d", path, lineNumber+1))
+		}
 	}
 
 	for _, match := range tatianaLinkLabel.FindAllString(text, -1) {
 		*tatianaLabelViolations = append(*tatianaLabelViolations, fmt.Sprintf("%s: %s", path, match))
 	}
+}
+
+func duplicateBlockNoneAllowed(text string, lineNumber int) bool {
+	lines := strings.Split(text, "\n")
+	start := lineNumber
+	for start >= 0 && !strings.Contains(lines[start], "{") {
+		start--
+	}
+	if start < 0 {
+		return false
+	}
+
+	selector := strings.Join(lines[start:lineNumber+1], " ")
+	for previous := start - 1; previous >= 0 && strings.TrimSpace(lines[previous]) != ""; previous-- {
+		selector = lines[previous] + " " + selector
+	}
+
+	return strings.Contains(selector, ".card[href]") &&
+		strings.Contains(selector, ".step-row[href]") &&
+		strings.Contains(selector, ".action-tile[href]")
 }

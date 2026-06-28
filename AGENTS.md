@@ -21,3 +21,4 @@ GTM-W57BDKGX
 - Keep private operations, contacts, budgets, credentials, internal notes, and unpublished plans out of this public repository.
 - Public-facing mentions of `TatianaSF` must use the exact spelling `TatianaSF`.
 - All public-facing text links, internal and external, must be visibly underlined by default without requiring hover.
+- If one clickable public block contains both a primary title and secondary description that go to the same URL, underline only the primary title or first line, not the secondary description.

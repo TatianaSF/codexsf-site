@@ -46,6 +46,8 @@ workspace controlled by the Codex SF organizers.
 - All public-facing text links should be visibly underlined by default.
 - This applies to internal links and external links.
 - Do not rely on hover alone to communicate that text is clickable.
+- If one clickable card, tile, or row contains both a primary title and secondary description that go to the same URL, underline only the primary title or first line.
+- Keep secondary descriptions readable without underline when they duplicate the same destination as the title.
 - External links should use `target="_blank"` and `rel="noopener noreferrer"` where applicable.
 
 ## Local Setup
