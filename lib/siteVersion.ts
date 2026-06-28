@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.23";
+export const CURRENT_VERSION = "v1.0.24";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.24",
+    date: "2026-06-28",
+    description:
+      "Documented the site-wide favicon and app icon standard and verified global icon metadata across generated public pages."
+  },
   {
     version: "v1.0.23",
     date: "2026-06-28",
