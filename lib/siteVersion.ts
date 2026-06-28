@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.20";
+export const CURRENT_VERSION = "v1.0.21";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.21",
+    date: "2026-06-28",
+    description:
+      "Added the public link visibility rule and made public text links visibly underlined by default."
+  },
   {
     version: "v1.0.20",
     date: "2026-06-28",

@@ -2,7 +2,7 @@
 
 Public site: [https://codexsf.com](https://codexsf.com)
 
-Source code: [https://github.com/TatianaSF/codexsf-site](https://github.com/TatianaSF/codexsf-site)
+Source code: [GitHub repository](https://github.com/TatianaSF/codexsf-site)
 
 License: [MIT](LICENSE)
 
@@ -41,6 +41,13 @@ workspace controlled by the Codex SF organizers.
 - Do not add Cyrillic text to the public website.
 - Keep private notes and internal ops content out of the public repository.
 
+## Public Link Visibility Rule
+
+- All public-facing text links should be visibly underlined by default.
+- This applies to internal links and external links.
+- Do not rely on hover alone to communicate that text is clickable.
+- External links should use `target="_blank"` and `rel="noopener noreferrer"` where applicable.
+
 ## Local Setup
 
 ```powershell
@@ -65,7 +72,7 @@ creates the static site in `out/`.
 - [GitHub Pages deployment](docs/github-pages-deployment.md)
 - [Content guide](docs/content-guide.md)
 - [Public safety rules](docs/public-safety-rules.md)
-- [TatianaSF link QA checklist](docs/qa/tatianasf-link-checklist.md)
+- [Naming link QA checklist](docs/qa/tatianasf-link-checklist.md)
 - [SEO documentation](docs/seo/README.md)
 - [Google Tag Manager](docs/analytics/google-tag-manager.md)
 

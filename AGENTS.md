@@ -18,3 +18,4 @@ GTM-W57BDKGX
 - Keep public content in English.
 - Keep private operations, contacts, budgets, credentials, internal notes, and unpublished plans out of this public repository.
 - Public-facing mentions of `TatianaSF` must use the exact spelling `TatianaSF`.
+- All public-facing text links, internal and external, must be visibly underlined by default without requiring hover.

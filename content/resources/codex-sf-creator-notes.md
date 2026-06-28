@@ -26,8 +26,8 @@ A public community site should answer basic questions quickly: who created it, w
 
 ### Related public pages
 
-- [TatianaSF public reference](/resources/tatianasf-public-reference/)
-- [TatianaSF creator profile](/tatianasf/)
+- [Public reference](/resources/tatianasf-public-reference/)
+- [Creator profile](/tatianasf/)
 - [Organizer checklist](/hackkit/organizer-checklist/)
 - [Judging rubric](/resources/judging-rubric/)
 - [Run of show template](/resources/run-of-show-template/)

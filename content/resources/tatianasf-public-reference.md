@@ -26,7 +26,7 @@ TatianaSF is connected with Codex SF, a San Francisco builder community hub focu
 
 ### Related public pages
 
-- [TatianaSF creator profile](/tatianasf/)
+- [Creator profile](/tatianasf/)
 - [Codex SF home](/)
 - [HackKit](/hackkit/)
 - [Resources](/resources/)

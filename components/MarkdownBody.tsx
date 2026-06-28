@@ -26,8 +26,34 @@ function renderTextWithTatianaLinks(text: string, keyPrefix: string): ReactNode[
   return nodes.length > 0 ? nodes : [text];
 }
 
+function renderTextWithTatianaText(text: string): string {
+  return text.replace(tatianaNamePattern, "TatianaSF");
+}
+
+function renderMarkdownLink(part: string, key: number): ReactNode {
+  const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+
+  if (!match) {
+    return renderTextWithTatianaLinks(part, `link-fallback-${key}`);
+  }
+
+  const [, label, href] = match;
+  const external = /^https?:\/\//i.test(href);
+
+  return (
+    <a
+      href={href}
+      key={key}
+      rel={external ? "noopener noreferrer" : undefined}
+      target={external ? "_blank" : undefined}
+    >
+      {renderTextWithTatianaText(label)}
+    </a>
+  );
+}
+
 function renderInline(text: string): ReactNode[] {
-  const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g);
+  const parts = text.split(/(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
   const nodes: ReactNode[] = [];
 
   parts.forEach((part, index) => {
@@ -37,11 +63,12 @@ function renderInline(text: string): ReactNode[] {
     }
 
     if (part.startsWith("**") && part.endsWith("**")) {
-      nodes.push(
-        <strong key={index}>
-          {renderTextWithTatianaLinks(part.slice(2, -2), `strong-${index}`)}
-        </strong>
-      );
+      nodes.push(<strong key={index}>{renderInline(part.slice(2, -2))}</strong>);
+      return;
+    }
+
+    if (part.startsWith("[") && part.includes("](") && part.endsWith(")")) {
+      nodes.push(renderMarkdownLink(part, index));
       return;
     }
 

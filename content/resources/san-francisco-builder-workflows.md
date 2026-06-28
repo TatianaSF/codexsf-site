@@ -30,7 +30,7 @@ Codex SF publishes resources that make these workflows repeatable. HackKit gives
 
 ### Related public pages
 
-- [TatianaSF creator profile](/tatianasf/)
+- [Creator profile](/tatianasf/)
 - [Codex SF creator notes](/resources/codex-sf-creator-notes/)
 - [HackKit start here](/hackkit/start-here/)
 - [Event checklist](/resources/event-checklist/)
