@@ -32,7 +32,7 @@ const paths = [
 export const metadata: Metadata = createPageMetadata({
   title: "Community",
   description:
-    "Join Codex SF as a participant, volunteer, speaker, partner, or subscriber.",
+    "Join the CodexSF community by TatianaSF for San Francisco builder events, HackKit resources, practical Codex workflows, and open-source updates.",
   path: "/community/"
 });
 
@@ -43,8 +43,9 @@ export default function CommunityPage() {
         <div className="page-heading">
           <h1>Community</h1>
           <p>
-            Codex SF is for builders who want practical events, useful workflows,
-            and a friendly path from idea to demo.
+            CodexSF is for San Francisco builders who want practical events,
+            useful Codex workflows, HackKit resources, and a friendly path from
+            idea to demo.
           </p>
         </div>
       </section>

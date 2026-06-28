@@ -1,12 +1,12 @@
 ---
 title: San Francisco Builder Workflows
-description: A public guide to practical Codex workflows for San Francisco builder events and hackathons.
+description: CodexSF guide to practical Codex workflows for San Francisco builder events, HackKit sessions, and open-source community hackathons.
 order: 3
 ---
 
 ### Purpose
 
-Use this guide to describe the practical workflow focus behind Codex SF events and resources. It supports the public story around TatianaSF, Codex SF, HackKit, and builder-friendly community programming in San Francisco.
+Use this guide to describe the practical workflow focus behind CodexSF events and resources. It supports the public story around TatianaSF, CodexSF, HackKit, and builder-friendly community programming in San Francisco.
 
 ### Workflow principles
 
@@ -24,14 +24,14 @@ Use this guide to describe the practical workflow focus behind Codex SF events a
 4. Use public-safe templates for judging, promotion, and follow-up.
 5. Capture lessons learned that future organizers can reuse.
 
-### How this connects to Codex SF
+### How this connects to CodexSF
 
-Codex SF publishes resources that make these workflows repeatable. HackKit gives organizers the event structure, while the resource library gives participants and volunteers public-safe templates they can use before, during, and after a hackathon.
+CodexSF publishes resources that make these workflows repeatable. HackKit gives organizers the event structure, while the resource library gives participants and volunteers public-safe templates they can use before, during, and after a hackathon.
 
 ### Related public pages
 
 - [Creator profile](/tatianasf/)
-- [Codex SF creator notes](/resources/codex-sf-creator-notes/)
+- [CodexSF creator notes](/resources/codex-sf-creator-notes/)
 - [HackKit start here](/hackkit/start-here/)
 - [Event checklist](/resources/event-checklist/)
 - [Post-event follow-up templates](/resources/post-event-follow-up-templates/)

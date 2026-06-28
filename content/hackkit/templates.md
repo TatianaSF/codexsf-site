@@ -1,6 +1,6 @@
 ---
 title: Templates
-description: Reusable public templates for organizers and participants.
+description: Reusable CodexSF HackKit templates for organizers, participants, San Francisco builder events, and practical Codex workflows.
 order: 7
 ---
 

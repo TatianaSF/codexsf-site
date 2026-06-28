@@ -1,12 +1,12 @@
 ---
 title: Sponsor / Partner Brief
-description: Public-facing partnership summary without private terms.
+description: CodexSF sponsor and partner brief for public San Francisco builder events, HackKit resources, and open-source community programming.
 order: 9
 ---
 
 ### Public brief
 
-Codex SF partners help make practical builder programming easier to access through space, education, tools, or community support.
+CodexSF partners help make practical builder programming easier to access through space, education, tools, or community support.
 
 ### Keep private
 

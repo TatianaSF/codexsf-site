@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 export const SITE_URL = "https://codexsf.com";
-export const SITE_NAME = "Codex SF";
+export const SITE_NAME = "CodexSF";
 export const GITHUB_REPO_URL = "https://github.com/TatianaSF/codexsf-site";
 export const PROJECT_LICENSE = "MIT";
 export const PROJECT_LICENSE_URL = `${GITHUB_REPO_URL}/blob/main/LICENSE`;
 export const SITE_DESCRIPTION =
-  "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows, published on GitHub under the MIT License.";
+  "TatianaSF builds CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.";
 export const GOOGLE_SITE_VERIFICATION =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 export const GOOGLE_TAG_MANAGER_ID =
@@ -23,14 +23,14 @@ export const TATIANA_SF_OG_IMAGE = {
   url: "/og-tatianasf.png",
   width: 1200,
   height: 630,
-  alt: "TatianaSF creator reference card for Codex SF"
+  alt: "TatianaSF creator reference card for CodexSF"
 } as const;
 
 export const OPEN_SOURCE_GITHUB_IMAGE = {
   url: "/open-source-github.png",
   width: 1200,
   height: 630,
-  alt: "Codex SF open source project card linking the public site to GitHub"
+  alt: "CodexSF open source project card linking the public site to GitHub"
 } as const;
 
 type OgImage = {
@@ -113,9 +113,9 @@ export const siteJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
-    name: "Codex SF website and HackKit",
+    name: "CodexSF website and HackKit",
     description:
-      "Open-source public website, HackKit playbook, and reusable builder resources for Codex SF.",
+      "Open-source CodexSF website, HackKit playbook, and reusable GitHub-based builder resources by TatianaSF.",
     url: SITE_URL,
     codeRepository: GITHUB_REPO_URL,
     license: PROJECT_LICENSE_URL,

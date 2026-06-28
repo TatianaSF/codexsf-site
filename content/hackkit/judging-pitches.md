@@ -1,6 +1,6 @@
 ---
 title: Judging & Pitches
-description: Clear demo expectations and public-safe judging guidance.
+description: CodexSF HackKit judging and pitch guidance for community hackathon demos, practical Codex workflows, and builder-friendly feedback.
 order: 6
 ---
 

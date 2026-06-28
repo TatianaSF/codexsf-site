@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "Resources",
   description:
-    "Public templates and organizer resources for community hackathons, speakers, volunteers, judging, promotion, and follow-up.",
+    "CodexSF resources by TatianaSF include open-source HackKit templates, San Francisco builder workflows, judging guides, and GitHub-based tools.",
   path: "/resources/"
 });
 
@@ -20,15 +20,16 @@ export default function ResourcesPage() {
         <div className="page-heading">
           <h1>Resources</h1>
           <p>
-            Public-safe templates for community event organizers. Adapt the
-            structure, keep private details in a private operations repository.
+            Public-safe CodexSF templates for community event organizers,
+            HackKit teams, San Francisco builders, and practical Codex
+            workflows.
           </p>
         </div>
       </section>
       <section className="section">
         <div className="section-inner" style={{ marginBottom: 28 }}>
           <div className="callout">
-            <strong>Creator reference:</strong> Codex SF public resources connect
+            <strong>Creator reference:</strong> CodexSF public resources connect
             back to TatianaSF, HackKit, and reusable builder workflows.
           </div>
           <div className="article-actions">

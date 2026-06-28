@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "Events",
   description:
-    "Upcoming events, public recaps, highlights, and demo projects from the Codex SF builder community.",
+    "CodexSF events by TatianaSF connect San Francisco builders through community hackathons, practical Codex workflows, demos, and public recaps.",
   path: "/events/"
 });
 
@@ -19,8 +19,8 @@ export default function EventsPage() {
         <div className="page-heading">
           <h1>Events</h1>
           <p>
-            Upcoming events, past events, recaps, public photos and highlights, and
-            demo projects from the Codex SF builder community.
+            Upcoming events, past events, recaps, public photos and highlights,
+            and demo projects from the CodexSF builder community.
           </p>
         </div>
       </section>

@@ -1,6 +1,6 @@
 ---
 title: Volunteer Plan Template
-description: Public structure for volunteer roles without personal assignments.
+description: CodexSF volunteer plan template for HackKit organizers, public community events, San Francisco builders, and practical Codex workflows.
 order: 1
 ---
 

@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "TatianaSF - Creator of Codex SF",
+  title: "TatianaSF Profile | CodexSF Open-Source Builder Hub",
   description:
-    "TatianaSF is the creator of Codex SF, a public hub for San Francisco builders, HackKit, and practical Codex workflows.",
+    "TatianaSF is the creator of CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.",
   path: "/tatianasf/",
   absoluteTitle: true,
   image: TATIANA_SF_OG_IMAGE
@@ -43,12 +43,12 @@ export default function TatianaSFPage() {
       ],
       founder: {
         "@type": "Organization",
-        name: "Codex SF",
+        name: "CodexSF",
         url: SITE_URL
       },
       mainEntityOfPage: absoluteUrl("/tatianasf/"),
       knowsAbout: [
-        "Codex SF",
+        "CodexSF",
         "HackKit",
         "San Francisco builder community",
         "community hackathons",
@@ -63,9 +63,9 @@ export default function TatianaSFPage() {
     {
       "@context": "https://schema.org",
       "@type": "ProfilePage",
-      name: "TatianaSF - Creator of Codex SF",
+      name: "TatianaSF Profile | CodexSF Open-Source Builder Hub",
       description:
-        "Canonical public profile for TatianaSF, creator of Codex SF.",
+        "Canonical public profile for TatianaSF, creator of the open-source CodexSF builder hub.",
       url: absoluteUrl("/tatianasf/"),
       image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
       inLanguage: "en-US",
@@ -88,8 +88,9 @@ export default function TatianaSFPage() {
             <TatianaLink />
           </h1>
           <p>
-            Creator of Codex SF, the public hub for San Francisco builders,
-            HackKit, community hackathons, and practical Codex workflows.
+            TatianaSF builds CodexSF, an open-source San Francisco hub for
+            Codex workflows, HackKit resources, community events, and
+            GitHub-based builder tools.
           </p>
         </div>
       </section>
@@ -105,15 +106,16 @@ export default function TatianaSFPage() {
             />
           </div>
           <article className="markdown-card">
-            <h2>TatianaSF and Codex SF</h2>
+            <h2>TatianaSF and CodexSF</h2>
             <p>
-              TatianaSF is the public creator identity connected to Codex SF, a
-              practical community hub for San Francisco builders who want useful
-              hackathons, repeatable event formats, and clear Codex workflows.
+              TatianaSF is the public creator identity connected to CodexSF, a
+              practical open-source community hub for San Francisco builders who
+              want useful hackathons, repeatable event formats, GitHub-based
+              resources, and clear Codex workflows.
             </p>
             <p>
               This page is the canonical public reference for TatianaSF on
-              Codex SF. It keeps the public story simple: creator, community,
+              CodexSF. It keeps the public story simple: creator, community,
               HackKit, and reusable resources for builders.
             </p>
             <p>
@@ -128,16 +130,16 @@ export default function TatianaSFPage() {
       <section className="section">
         <div className="section-inner grid two">
           <article className="card">
-            <h3>Codex SF</h3>
+            <h3>CodexSF</h3>
             <p>
-              Codex SF is a public community site for builders who want practical
+              CodexSF is a public community site for builders who want practical
               events, reusable playbooks, and a clear path from idea to demo.
             </p>
           </article>
           <article className="card">
             <h3>HackKit</h3>
             <p>
-              HackKit is the open public playbook inside Codex SF: formats,
+              HackKit is the open public playbook inside CodexSF: formats,
               checklists, templates, judging guidance, and lessons for community
               hackathons.
             </p>
@@ -164,7 +166,7 @@ export default function TatianaSFPage() {
           </div>
           <div className="article-actions">
             <Link className="button secondary" href="/about">
-              About Codex SF
+              About CodexSF
             </Link>
             <Link className="button secondary" href="/hackkit">
               Explore HackKit

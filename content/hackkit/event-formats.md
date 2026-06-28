@@ -1,6 +1,6 @@
 ---
 title: Event Formats
-description: Pick the simplest format that supports the builder outcome.
+description: CodexSF HackKit event formats for San Francisco builder meetups, community hackathons, demos, and practical Codex workflows.
 order: 2
 ---
 

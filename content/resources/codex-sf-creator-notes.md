@@ -1,18 +1,18 @@
 ---
-title: Codex SF Creator Notes
-description: Public notes about the creator focus behind Codex SF, HackKit, and practical builder workflows.
+title: CodexSF Creator Notes
+description: Public TatianaSF creator notes for CodexSF, HackKit, open-source builder resources, and practical Codex workflows.
 order: 2
 ---
 
 ### Purpose
 
-These creator notes explain the public focus behind Codex SF without exposing private planning details. They connect TatianaSF, Codex SF, HackKit, and the builder resources that make the site useful for organizers and participants.
+These creator notes explain the public focus behind CodexSF without exposing private planning details. They connect TatianaSF, CodexSF, HackKit, and the builder resources that make the site useful for organizers and participants.
 
 ### Creator focus
 
-TatianaSF is presented publicly as the creator of Codex SF. The work centers on making community building easier to repeat: clear event formats, reusable resources, practical Codex workflows, and public pages that builders can share before and after a hackathon.
+TatianaSF is presented publicly as the creator of CodexSF. The work centers on making community building easier to repeat: clear event formats, reusable resources, practical Codex workflows, and public pages that builders can share before and after a hackathon.
 
-### What Codex SF publishes
+### What CodexSF publishes
 
 - HackKit materials for planning community hackathons.
 - Resource templates for speakers, volunteers, judges, partners, and follow-up.
@@ -22,7 +22,7 @@ TatianaSF is presented publicly as the creator of Codex SF. The work centers on 
 
 ### Why the public layer matters
 
-A public community site should answer basic questions quickly: who created it, what it is for, what builders can reuse, and where to go next. Codex SF uses simple public pages to make that context visible to participants, partners, speakers, and search engines.
+A public community site should answer basic questions quickly: who created it, what it is for, what builders can reuse, and where to go next. CodexSF uses simple public pages to make that context visible to participants, partners, speakers, and search engines.
 
 ### Related public pages
 

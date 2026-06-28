@@ -1,6 +1,6 @@
 ---
 title: Demo Projects
-description: Public showcase for participant-approved projects.
+description: CodexSF showcase for participant-approved San Francisco builder demos, practical Codex workflows, and community hackathon projects.
 order: 5
 status: Opt-in
 ---

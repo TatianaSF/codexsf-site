@@ -1,6 +1,6 @@
 ---
 title: Start Here
-description: The fastest way to frame a useful community hackathon.
+description: Start CodexSF HackKit with a practical open-source guide for San Francisco community hackathons and Codex workflow events.
 order: 1
 ---
 

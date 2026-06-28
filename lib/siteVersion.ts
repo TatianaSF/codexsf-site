@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.27";
+export const CURRENT_VERSION = "v1.0.28";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.28",
+    date: "2026-06-28",
+    description:
+      "Updated site-wide SEO titles and descriptions around TatianaSF, CodexSF, open-source HackKit resources, and GitHub-based builder tools."
+  },
   {
     version: "v1.0.27",
     date: "2026-06-28",

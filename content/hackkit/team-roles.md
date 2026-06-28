@@ -1,6 +1,6 @@
 ---
 title: Team Roles
-description: Lightweight roles that help teams build without over-managing.
+description: CodexSF HackKit team roles for builder events, community hackathons, demo teams, and practical Codex workflow sessions.
 order: 5
 ---
 

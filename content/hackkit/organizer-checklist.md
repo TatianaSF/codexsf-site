@@ -1,6 +1,6 @@
 ---
 title: Organizer Checklist
-description: A public-facing checklist for repeatable event quality.
+description: CodexSF HackKit organizer checklist for repeatable San Francisco builder events, HackKit planning, and practical Codex workflows.
 order: 4
 ---
 

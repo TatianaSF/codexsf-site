@@ -1,6 +1,6 @@
 ---
 title: Judging Rubric
-description: Transparent criteria for demos and pitches.
+description: CodexSF judging rubric for hackathon demos, builder pitches, practical Codex workflows, and transparent community feedback.
 order: 4
 ---
 

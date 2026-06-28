@@ -1,6 +1,6 @@
 ---
 title: Run of Show Template
-description: A public agenda skeleton for hackathon-style events.
+description: CodexSF run-of-show template for HackKit events, San Francisco builder hackathons, demos, and practical Codex workflow sessions.
 order: 10
 ---
 

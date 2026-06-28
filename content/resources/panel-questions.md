@@ -1,6 +1,6 @@
 ---
 title: Panel Questions
-description: Public question prompts for practical builder conversations.
+description: CodexSF panel questions for San Francisco builder conversations, HackKit sessions, practical Codex workflows, and community events.
 order: 3
 ---
 

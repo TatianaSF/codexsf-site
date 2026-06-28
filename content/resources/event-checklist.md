@@ -1,6 +1,6 @@
 ---
 title: Event Checklist
-description: Public checklist for preparing an event page and participant experience.
+description: CodexSF event checklist for HackKit organizers preparing public pages, participant experience, and practical Codex workflow sessions.
 order: 6
 ---
 

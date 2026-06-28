@@ -1,6 +1,6 @@
 ---
 title: Timeline
-description: A simple public timeline for planning without exposing operations.
+description: CodexSF HackKit timeline for public event planning, San Francisco builder gatherings, and practical Codex workflow hackathons.
 order: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Pitch Rules
-description: Short rules for supportive hackathon demos.
+description: CodexSF pitch rules for supportive hackathon demos, builder presentations, practical Codex workflows, and community judging.
 order: 5
 ---
 

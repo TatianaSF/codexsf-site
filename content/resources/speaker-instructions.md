@@ -1,6 +1,6 @@
 ---
 title: Speaker Instructions
-description: A participant-facing guide for practical short talks.
+description: CodexSF speaker instructions for practical short talks, HackKit sessions, San Francisco builder events, and Codex workflow demos.
 order: 2
 ---
 

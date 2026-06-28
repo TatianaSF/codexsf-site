@@ -35,7 +35,7 @@ export async function generateMetadata({
   }
 
   return createPageMetadata({
-    title: `${item.title} - Resources`,
+    title: `${item.title} | CodexSF Resources`,
     description: item.description,
     path: `/resources/${item.slug}/`
   });

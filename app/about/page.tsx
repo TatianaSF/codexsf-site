@@ -4,9 +4,9 @@ import { TatianaLink } from "@/components/TatianaLink";
 import { createPageMetadata, GITHUB_REPO_URL } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "About",
+  title: "About CodexSF",
   description:
-    "About Codex SF, HackKit, TatianaSF, and the open-source public community hub for San Francisco builders.",
+    "About CodexSF, the open-source San Francisco builder hub by TatianaSF with HackKit resources, Codex workflows, and GitHub-based tools.",
   path: "/about/"
 });
 
@@ -17,8 +17,9 @@ export default function AboutPage() {
         <div className="page-heading">
           <h1>About</h1>
           <p>
-            Codex SF is a community hub for builders, hackathons, and practical Codex
-            workflows in San Francisco.
+            CodexSF is an open-source community hub by TatianaSF for builders,
+            hackathons, HackKit resources, and practical Codex workflows in San
+            Francisco.
           </p>
         </div>
       </section>
@@ -43,7 +44,7 @@ export default function AboutPage() {
               Created by <TatianaLink />
             </h3>
             <p>
-              Codex SF is created as a practical, community-friendly home for
+              CodexSF is created as a practical, community-friendly home for
               San Francisco builders and hackathon organizers.
             </p>
             <div className="article-actions">

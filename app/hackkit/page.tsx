@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "HackKit",
   description:
-    "Practical open-source playbook for running community hackathons, including formats, timelines, roles, judging, templates, and lessons.",
+    "HackKit is the open-source CodexSF playbook by TatianaSF for San Francisco hackathons, event formats, Codex workflows, templates, and lessons.",
   path: "/hackkit/"
 });
 
@@ -19,9 +19,9 @@ export default function HackKitPage() {
         <div className="page-heading">
           <h1>HackKit</h1>
           <p>
-            Practical open-source playbook for running community hackathons:
-            formats, timelines, checklists, roles, judging, templates, and lessons
-            learned.
+            Practical open-source CodexSF playbook for running community
+            hackathons: formats, timelines, checklists, roles, judging,
+            templates, Codex workflows, and lessons learned.
           </p>
         </div>
       </section>

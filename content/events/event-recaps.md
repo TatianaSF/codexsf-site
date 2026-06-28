@@ -1,6 +1,6 @@
 ---
 title: Event Recaps
-description: Reusable format for public recap posts.
+description: Reusable CodexSF recap format for community events, HackKit lessons, builder demos, and public San Francisco hackathon notes.
 order: 3
 status: Template
 ---

@@ -10,9 +10,9 @@ import {
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "Codex SF",
+  title: "TatianaSF | CodexSF Open-Source Builder Hub",
   description:
-    "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows.",
+    "TatianaSF builds CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.",
   path: "/",
   absoluteTitle: true
 });
@@ -43,8 +43,8 @@ export default function Home() {
             <div className="hero-copy" aria-label="CodexSF project summary">
               <span className="hero-copy-kicker">Open-source community hub</span>
               <span className="hero-copy-main">
-                Builders, hackathons, and practical Codex workflows in San
-                Francisco.
+                TatianaSF builds CodexSF for San Francisco builders, HackKit
+                resources, community events, and practical Codex workflows.
               </span>
               <span className="hero-copy-meta">
                 Published on{" "}
@@ -233,7 +233,7 @@ export default function Home() {
             <p className="eyebrow">Open source</p>
             <h2>Public code on GitHub</h2>
             <p>
-              Codex SF is an open-source public website. The repository contains
+              CodexSF is an open-source public website. The repository contains
               the site, HackKit docs, reusable builder resources, and deployment
               workflow that publishes this project.
             </p>

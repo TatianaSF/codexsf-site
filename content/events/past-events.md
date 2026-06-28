@@ -1,6 +1,6 @@
 ---
 title: Past Events
-description: Public archive for completed events.
+description: Public CodexSF archive for completed San Francisco builder events, community hackathons, demos, and practical Codex workflow sessions.
 order: 2
 status: Public archive
 ---

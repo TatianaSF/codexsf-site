@@ -1,6 +1,6 @@
 ---
 title: Photos & Highlights
-description: A safe place for approved public media.
+description: Approved CodexSF photos and highlights from San Francisco builder events, HackKit sessions, demos, and community hackathons.
 order: 4
 status: Approval required
 ---

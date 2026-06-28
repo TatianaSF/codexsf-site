@@ -4,7 +4,8 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Log",
-  description: "Public Codex SF site version log and update history.",
+  description:
+    "Public CodexSF version log for site updates, SEO improvements, favicon changes, HackKit resources, and open-source GitHub releases.",
   path: "/log/"
 });
 
@@ -15,7 +16,7 @@ export default function LogPage() {
         <div className="page-heading">
           <h1>Log</h1>
           <p>
-            Public site versions and short update notes for Codex SF. Current
+            Public site versions and short update notes for CodexSF. Current
             version: <strong>{CURRENT_VERSION}</strong>.
           </p>
         </div>

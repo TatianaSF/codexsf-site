@@ -1,12 +1,12 @@
 ---
 title: LinkedIn Promo Templates
-description: Public-ready announcement copy starters.
+description: CodexSF LinkedIn promo templates for TatianaSF, HackKit resources, San Francisco builder events, and public community updates.
 order: 7
 ---
 
 ### Short promo
 
-Join Codex SF for a practical builder session focused on shipping useful AI-assisted workflows and demos in San Francisco.
+Join CodexSF for a practical builder session focused on shipping useful AI-assisted workflows and demos in San Francisco.
 
 ### Speaker promo
 

@@ -1,6 +1,6 @@
 ---
 title: Lessons Learned
-description: Public learning loop for improving each event.
+description: CodexSF HackKit lessons learned for improving San Francisco builder events, community hackathons, and practical Codex workflows.
 order: 8
 ---
 

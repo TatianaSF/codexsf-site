@@ -35,7 +35,7 @@ export async function generateMetadata({
   }
 
   return createPageMetadata({
-    title: `${item.title} - HackKit`,
+    title: `${item.title} | CodexSF HackKit`,
     description: item.description,
     path: `/hackkit/${item.slug}/`
   });

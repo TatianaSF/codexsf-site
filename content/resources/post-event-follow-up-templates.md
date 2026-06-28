@@ -1,6 +1,6 @@
 ---
 title: Post-event Follow-up Templates
-description: Public recap and thank-you starters.
+description: CodexSF post-event follow-up templates for HackKit organizers, San Francisco builder events, public recaps, and thank-you notes.
 order: 8
 ---
 
@@ -10,4 +10,4 @@ Thank you to everyone who built, demoed, volunteered, and shared lessons. We wil
 
 ### Recap starter
 
-Codex SF builders gathered to explore practical workflows, build small demos, and share lessons for future community hackathons.
+CodexSF builders gathered to explore practical workflows, build small demos, and share lessons for future community hackathons.
