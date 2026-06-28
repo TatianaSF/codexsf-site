@@ -1,6 +1,18 @@
-export const CURRENT_VERSION = "v1.0.21";
+export const CURRENT_VERSION = "v1.0.23";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.23",
+    date: "2026-06-28",
+    description:
+      "Refined linked card styling so only primary titles are underlined when descriptions share the same destination."
+  },
+  {
+    version: "v1.0.22",
+    date: "2026-06-28",
+    description:
+      "Added favicon, app icons, and a web manifest so browsers can show the CodexSF mark in tabs and mobile shortcuts."
+  },
   {
     version: "v1.0.21",
     date: "2026-06-28",
