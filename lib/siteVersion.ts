@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.12";
+export const CURRENT_VERSION = "v1.0.13";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.13",
+    date: "2026-06-28",
+    description:
+      "Centered the header Built with label and moved it closer to the CodexSF logo."
+  },
   {
     version: "v1.0.12",
     date: "2026-06-28",
