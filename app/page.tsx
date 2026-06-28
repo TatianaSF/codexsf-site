@@ -5,7 +5,8 @@ import { getCollection } from "@/lib/content";
 import {
   createPageMetadata,
   GITHUB_REPO_URL,
-  OPEN_SOURCE_GITHUB_IMAGE
+  OPEN_SOURCE_GITHUB_IMAGE,
+  PROJECT_LICENSE_URL
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -39,11 +40,27 @@ export default function Home() {
               </span>
               <span>CodexSF</span>
             </h1>
-            <p className="hero-copy">
-              Open-source community hub for builders, hackathons, and practical
-              Codex workflows in San Francisco. Published on GitHub under the
-              MIT License.
-            </p>
+            <div className="hero-copy" aria-label="CodexSF project summary">
+              <span className="hero-copy-kicker">Open-source community hub</span>
+              <span className="hero-copy-main">
+                Builders, hackathons, and practical Codex workflows in San
+                Francisco.
+              </span>
+              <span className="hero-copy-meta">
+                Published on{" "}
+                <a href={GITHUB_REPO_URL} rel="noopener noreferrer" target="_blank">
+                  GitHub
+                </a>{" "}
+                under the{" "}
+                <a
+                  href={PROJECT_LICENSE_URL}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  MIT License
+                </a>
+              </span>
+            </div>
             <div className="hero-actions">
               <Link className="button primary" href="/hackkit">
                 Explore HackKit

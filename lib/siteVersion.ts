@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.17";
+export const CURRENT_VERSION = "v1.0.18";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.18",
+    date: "2026-06-28",
+    description:
+      "Formatted the homepage hero copy with stronger typography, open-source emphasis, and direct GitHub and MIT License links."
+  },
   {
     version: "v1.0.17",
     date: "2026-06-28",
