@@ -79,19 +79,26 @@ img {
 }
 
 .nav-shell {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "primary cta"
+    "nav nav";
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 10px 18px;
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
-  min-height: 72px;
+  min-height: 86px;
+  padding: 10px 0 12px;
 }
 
 .nav-primary-row {
+  grid-area: primary;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 0;
 }
 
 .brand {
@@ -107,6 +114,7 @@ img {
 }
 
 .nav-links {
+  grid-area: nav;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -160,6 +168,10 @@ img {
   width: 154px;
   height: 36px;
   object-fit: contain;
+}
+
+.header-signature {
+  max-width: 100%;
 }
 
 .signature-separator {
@@ -239,6 +251,10 @@ img {
   background: var(--ink);
   color: #fff;
   box-shadow: 0 8px 0 rgba(36, 107, 254, 0.2);
+}
+
+.nav-cta {
+  grid-area: cta;
 }
 
 .button.secondary {
@@ -837,6 +853,9 @@ img {
   .nav-shell {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "primary"
+      "menu";
     gap: 12px;
     padding: 12px 0;
   }
@@ -898,6 +917,7 @@ img {
   }
 
   .mobile-menu {
+    grid-area: menu;
     display: grid;
     max-height: 0;
     overflow: hidden;

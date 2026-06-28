@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { SiteSignature } from "@/components/SiteSignature";
 
 const navItems = [
   ["Home", "/"],
@@ -62,16 +62,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="nav-shell" data-menu-open={menuOpen}>
         <div className="nav-primary-row">
-          <Link className="brand" href="/" onClick={closeMenu}>
-            <Image
-              alt="CodexSF"
-              className="brand-logo"
-              height={48}
-              priority
-              src="/codexsf-logo.png"
-              width={206}
-            />
-          </Link>
+          <SiteSignature className="header-signature" />
           <button
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
