@@ -305,9 +305,22 @@ img {
 .hero h1 {
   max-width: 780px;
   margin: 0;
-  font-size: clamp(4rem, 12vw, 9.5rem);
+  font-size: clamp(4rem, 10vw, 6.8rem);
   line-height: 0.88;
   letter-spacing: 0;
+}
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.6vw, 20px);
+  white-space: nowrap;
+}
+
+.hero-title-logo {
+  flex: 0 0 auto;
+  width: 84px;
+  height: auto;
 }
 
 .hero-copy {
@@ -1034,7 +1047,15 @@ img {
 
 @media (max-width: 620px) {
   .hero h1 {
-    font-size: clamp(3.3rem, 18vw, 5.2rem);
+    font-size: clamp(2.95rem, 15vw, 4.15rem);
+  }
+
+  .hero-title {
+    gap: 8px;
+  }
+
+  .hero-title-logo {
+    width: 68px;
   }
 
   .open-source-copy h2 {

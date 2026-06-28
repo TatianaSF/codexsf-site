@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.14";
+export const CURRENT_VERSION = "v1.0.15";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.15",
+    date: "2026-06-28",
+    description:
+      "Added the CodexSF mark before the homepage hero title and changed the title to CodexSF without a space."
+  },
   {
     version: "v1.0.14",
     date: "2026-06-28",

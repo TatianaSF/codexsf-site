@@ -26,7 +26,18 @@ export default function Home() {
       <section className="hero">
         <div className="hero-inner">
           <div>
-            <h1>Codex SF</h1>
+            <h1 className="hero-title">
+              <Image
+                src="/codexsf-mark.png"
+                alt=""
+                width={74}
+                height={70}
+                className="hero-title-logo"
+                aria-hidden="true"
+                priority
+              />
+              <span>CodexSF</span>
+            </h1>
             <p className="hero-copy">
               Community hub for builders, hackathons, and practical Codex
               workflows in San Francisco.
