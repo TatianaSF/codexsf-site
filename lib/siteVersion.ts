@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.10";
+export const CURRENT_VERSION = "v1.0.11";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.11",
+    date: "2026-06-28",
+    description:
+      "Updated the CodexSF logo with the selected cloud, bridge, waves, and terminal mark concept."
+  },
   {
     version: "v1.0.10",
     date: "2026-06-28",
