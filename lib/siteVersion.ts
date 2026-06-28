@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.13";
+export const CURRENT_VERSION = "v1.0.14";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.14",
+    date: "2026-06-28",
+    description:
+      "Adjusted the header Built with label spacing to 20px on desktop and 10px on mobile."
+  },
   {
     version: "v1.0.13",
     date: "2026-06-28",
