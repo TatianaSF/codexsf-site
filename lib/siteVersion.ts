@@ -5,7 +5,7 @@ export const VERSION_LOG = [
     version: "v1.0.26",
     date: "2026-06-28",
     description:
-      "Regenerated the favicon and app icon set from the selected light CodexSF source artwork."
+      "Regenerated the favicon and app icon set and tightened the mobile header spacing."
   },
   {
     version: "v1.0.25",

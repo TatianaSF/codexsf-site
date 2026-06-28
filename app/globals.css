@@ -103,7 +103,7 @@ img {
   width: min(100% - 32px, var(--max));
   margin: 0 auto;
   min-height: 86px;
-  padding: 35px 0 40px;
+  padding: 10px 0 12px;
 }
 
 .nav-primary-row {
@@ -977,8 +977,9 @@ img {
     grid-template-areas:
       "primary"
       "menu";
-    gap: 12px;
-    padding: 35px 0 40px;
+    gap: 0;
+    min-height: auto;
+    padding: 4px 0;
   }
 
   .nav-primary-row {
@@ -996,10 +997,10 @@ img {
 
   .made-with-signature {
     justify-self: start;
-    min-height: 34px;
-    gap: 7px;
+    min-height: 32px;
+    gap: 6px;
     padding: 0 10px;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .site-signature {
@@ -1015,8 +1016,8 @@ img {
   }
 
   .site-signature-logo {
-    width: 132px;
-    height: 31px;
+    width: 124px;
+    height: 29px;
   }
 
   .signature-separator {
@@ -1024,14 +1025,14 @@ img {
   }
 
   .signature-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .signature-built-with {
-    font-size: 0.7rem;
+    font-size: 0.66rem;
     line-height: 0.9;
-    margin-left: -36px;
+    margin-left: -34px;
   }
 
   .footer-signature {
@@ -1089,6 +1090,7 @@ img {
 
   .nav-shell[data-menu-open="true"] .mobile-menu {
     max-height: 560px;
+    margin-top: 8px;
     padding: 10px;
     border: 1px solid var(--line);
     border-radius: 8px;
