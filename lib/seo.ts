@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://codexsf.com";
 export const SITE_NAME = "Codex SF";
+export const GITHUB_REPO_URL = "https://github.com/TatianaSF/codexsf-site";
 export const SITE_DESCRIPTION =
-  "Community hub for San Francisco builders, hackathons, and practical Codex workflows.";
+  "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows.";
 export const GOOGLE_SITE_VERIFICATION =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 export const GOOGLE_TAG_MANAGER_ID =
@@ -21,6 +22,13 @@ export const TATIANA_SF_OG_IMAGE = {
   width: 1200,
   height: 630,
   alt: "TatianaSF creator reference card for Codex SF"
+} as const;
+
+export const OPEN_SOURCE_GITHUB_IMAGE = {
+  url: "/open-source-github.png",
+  width: 1200,
+  height: 630,
+  alt: "Codex SF open source project card linking the public site to GitHub"
 } as const;
 
 type OgImage = {
@@ -76,7 +84,8 @@ export const siteJsonLd = [
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    inLanguage: "en-US"
+    inLanguage: "en-US",
+    sameAs: [GITHUB_REPO_URL]
   },
   {
     "@context": "https://schema.org",
@@ -84,6 +93,7 @@ export const siteJsonLd = [
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
+    sameAs: [GITHUB_REPO_URL],
     founder: {
       "@type": "Person",
       name: "TatianaSF",
@@ -96,6 +106,28 @@ export const siteJsonLd = [
         "https://x.com/TatianaSFcom",
         "https://luma.com/user/tatianasfcom"
       ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    name: "Codex SF website and HackKit",
+    description:
+      "Open-source public website, HackKit playbook, and reusable builder resources for Codex SF.",
+    url: SITE_URL,
+    codeRepository: GITHUB_REPO_URL,
+    image: absoluteUrl(OPEN_SOURCE_GITHUB_IMAGE.url),
+    programmingLanguage: ["TypeScript", "TSX", "Markdown"],
+    runtimePlatform: "Next.js",
+    creator: {
+      "@type": "Person",
+      name: "TatianaSF",
+      url: `${SITE_URL}/tatianasf/`
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: SITE_URL
     }
   }
 ] as const;

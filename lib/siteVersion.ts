@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.6";
+export const CURRENT_VERSION = "v1.0.7";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.7",
+    date: "2026-06-28",
+    description:
+      "Added the Codex SF open-source GitHub signal, public repository links, structured data, and README backlink."
+  },
   {
     version: "v1.0.6",
     date: "2026-06-28",

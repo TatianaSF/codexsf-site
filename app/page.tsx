@@ -2,12 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import { getCollection } from "@/lib/content";
-import { createPageMetadata } from "@/lib/seo";
+import {
+  createPageMetadata,
+  GITHUB_REPO_URL,
+  OPEN_SOURCE_GITHUB_IMAGE
+} from "@/lib/seo";
 
 export const metadata = createPageMetadata({
   title: "Codex SF",
   description:
-    "Community hub for San Francisco builders, hackathons, and practical Codex workflows.",
+    "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows.",
   path: "/",
   absoluteTitle: true
 });
@@ -190,6 +194,46 @@ export default function Home() {
               TatianaSF reference
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section alt" id="open-source">
+        <div className="section-inner open-source-panel">
+          <div className="open-source-copy">
+            <p className="eyebrow">Open source</p>
+            <h2>Public code on GitHub</h2>
+            <p>
+              Codex SF is an open-source public website. The repository contains
+              the site, HackKit docs, reusable builder resources, and deployment
+              workflow that publishes this project.
+            </p>
+            <div className="article-actions">
+              <a
+                className="button primary"
+                href={GITHUB_REPO_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View source on GitHub
+              </a>
+              <Link className="button secondary" href="/about">
+                About the project
+              </Link>
+            </div>
+          </div>
+          <a
+            className="open-source-media"
+            href={GITHUB_REPO_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Image
+              src={OPEN_SOURCE_GITHUB_IMAGE.url}
+              alt={OPEN_SOURCE_GITHUB_IMAGE.alt}
+              width={OPEN_SOURCE_GITHUB_IMAGE.width}
+              height={OPEN_SOURCE_GITHUB_IMAGE.height}
+            />
+          </a>
         </div>
       </section>
     </>

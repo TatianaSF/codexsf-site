@@ -600,7 +600,48 @@ img {
 
 .article-actions {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 22px;
+}
+
+.open-source-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.open-source-copy {
+  max-width: 560px;
+  min-width: 0;
+}
+
+.open-source-copy h2 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.open-source-copy p:not(.eyebrow) {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.open-source-media {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.open-source-media img {
+  width: 100%;
+  height: auto;
 }
 
 .markdown-card {
@@ -868,6 +909,7 @@ img {
   .hero-inner,
   .feature-strip,
   .creator-profile-grid,
+  .open-source-panel,
   .content-layout {
     grid-template-columns: 1fr;
   }
@@ -907,6 +949,25 @@ img {
 @media (max-width: 620px) {
   .hero h1 {
     font-size: clamp(3.3rem, 18vw, 5.2rem);
+  }
+
+  .open-source-copy h2 {
+    max-width: 100%;
+    font-size: 2.05rem;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .open-source-copy p:not(.eyebrow) {
+    overflow-wrap: anywhere;
+  }
+
+  .open-source-panel .button {
+    width: 100%;
+    min-height: 52px;
+    padding: 8px 14px;
+    text-align: center;
+    white-space: normal;
   }
 
   .section {

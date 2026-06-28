@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
+import { GITHUB_REPO_URL } from "@/lib/seo";
 
 export function SiteFooter() {
   return (
@@ -17,6 +18,9 @@ export function SiteFooter() {
           <Link href="/resources">Resources</Link>
           <Link href="/community">Community</Link>
           <Link href="/tatianasf">Creator</Link>
+          <a href={GITHUB_REPO_URL} rel="noopener noreferrer" target="_blank">
+            GitHub
+          </a>
         </div>
       </div>
     </footer>

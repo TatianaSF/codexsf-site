@@ -1,5 +1,9 @@
 # Codex SF
 
+Public site: [https://codexsf.com](https://codexsf.com)
+
+Source code: [https://github.com/TatianaSF/codexsf-site](https://github.com/TatianaSF/codexsf-site)
+
 Public MVP for `codexsf.com`: a landing-page-first site for builders, hackathons,
 and practical Codex workflows in San Francisco.
 

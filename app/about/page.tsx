@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
-import { createPageMetadata } from "@/lib/seo";
+import { createPageMetadata, GITHUB_REPO_URL } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "About",
   description:
-    "About Codex SF, HackKit, TatianaSF, and the public community hub for San Francisco builders.",
+    "About Codex SF, HackKit, TatianaSF, and the open-source public community hub for San Francisco builders.",
   path: "/about/"
 });
 
@@ -58,6 +58,23 @@ export default function AboutPage() {
               HackKit is the main public product: an open playbook for planning
               clearer, kinder, more useful community hackathons.
             </p>
+          </article>
+          <article className="card">
+            <h3>Open source on GitHub</h3>
+            <p>
+              The public website, HackKit docs, and reusable builder resources
+              are published from an open GitHub repository.
+            </p>
+            <div className="article-actions">
+              <a
+                className="button secondary"
+                href={GITHUB_REPO_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View repository
+              </a>
+            </div>
           </article>
         </div>
       </section>
