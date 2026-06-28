@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.28";
+export const CURRENT_VERSION = "v1.0.29";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.29",
+    date: "2026-06-28",
+    description:
+      "Added dependency pinning, public-safety CI scanning, local artifact ignores, and a Cloudflare security checklist."
+  },
   {
     version: "v1.0.28",
     date: "2026-06-28",

@@ -72,6 +72,7 @@ creates the static site in `out/`.
 
 - [Public site architecture](docs/public-site-architecture.md)
 - [GitHub Pages deployment](docs/github-pages-deployment.md)
+- [Cloudflare security checklist](docs/cloudflare-security.md)
 - [Content guide](docs/content-guide.md)
 - [Public safety rules](docs/public-safety-rules.md)
 - [Naming link QA checklist](docs/qa/tatianasf-link-checklist.md)

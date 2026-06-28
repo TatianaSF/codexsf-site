@@ -28,6 +28,8 @@ pnpm-debug.log*
 # local QA and scratch output
 tmp-qa
 coverage
+.codex-remote-attachments/
+public/*-preview.png
 
 # system
 .DS_Store

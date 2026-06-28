@@ -38,6 +38,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Public safety scan
+        run: npm run public-safety
+
       - name: Build static export
         run: npm run build
 
