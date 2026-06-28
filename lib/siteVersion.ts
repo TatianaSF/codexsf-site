@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.24";
+export const CURRENT_VERSION = "v1.0.25";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.25",
+    date: "2026-06-28",
+    description:
+      "Optimized the CodexSF favicon and app icon assets while preserving the site-wide icon metadata standard."
+  },
   {
     version: "v1.0.24",
     date: "2026-06-28",
