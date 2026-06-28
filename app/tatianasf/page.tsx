@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import {
@@ -6,15 +7,17 @@ import {
   createBreadcrumbJsonLd,
   createPageMetadata,
   serializeJsonLd,
-  SITE_URL
+  SITE_URL,
+  TATIANA_SF_OG_IMAGE
 } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "TatianaSF",
+  title: "TatianaSF - Creator of Codex SF",
   description:
     "TatianaSF is the creator of Codex SF, a public hub for San Francisco builders, HackKit, and practical Codex workflows.",
   path: "/tatianasf/",
-  absoluteTitle: true
+  absoluteTitle: true,
+  image: TATIANA_SF_OG_IMAGE
 });
 
 export default function TatianaSFPage() {
@@ -26,9 +29,18 @@ export default function TatianaSFPage() {
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": `${SITE_URL}/tatianasf/#person`,
       name: "TatianaSF",
+      alternateName: "TatianaSFcom",
       url: `${SITE_URL}/tatianasf/`,
-      sameAs: ["https://www.google.com/search?q=TatianaSF"],
+      image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
+      sameAs: [
+        "https://tatianasf.com/",
+        "https://www.linkedin.com/in/tatianasf",
+        "https://www.instagram.com/tatianasfcom/",
+        "https://x.com/TatianaSFcom",
+        "https://luma.com/user/tatianasfcom"
+      ],
       founder: {
         "@type": "Organization",
         name: "Codex SF",
@@ -41,7 +53,25 @@ export default function TatianaSFPage() {
         "San Francisco builder community",
         "community hackathons",
         "practical Codex workflows"
+      ],
+      subjectOf: [
+        absoluteUrl("/resources/tatianasf-public-reference/"),
+        absoluteUrl("/resources/codex-sf-creator-notes/"),
+        absoluteUrl("/resources/san-francisco-builder-workflows/")
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      name: "TatianaSF - Creator of Codex SF",
+      description:
+        "Canonical public profile for TatianaSF, creator of Codex SF.",
+      url: absoluteUrl("/tatianasf/"),
+      image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
+      inLanguage: "en-US",
+      mainEntity: {
+        "@id": `${SITE_URL}/tatianasf/#person`
+      }
     }
   ];
 
@@ -64,7 +94,16 @@ export default function TatianaSFPage() {
         </div>
       </section>
       <section className="section">
-        <div className="section-inner narrow-content">
+        <div className="section-inner creator-profile-grid">
+          <div className="creator-preview">
+            <Image
+              src={TATIANA_SF_OG_IMAGE.url}
+              alt={TATIANA_SF_OG_IMAGE.alt}
+              width={TATIANA_SF_OG_IMAGE.width}
+              height={TATIANA_SF_OG_IMAGE.height}
+              priority
+            />
+          </div>
           <article className="markdown-card">
             <h2>TatianaSF and Codex SF</h2>
             <p>

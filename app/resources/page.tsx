@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContentSection } from "@/components/ContentSection";
 import { getCollection } from "@/lib/content";
 import { createPageMetadata } from "@/lib/seo";
@@ -25,6 +26,23 @@ export default function ResourcesPage() {
         </div>
       </section>
       <section className="section">
+        <div className="section-inner" style={{ marginBottom: 28 }}>
+          <div className="callout">
+            <strong>Creator reference:</strong> Codex SF public resources connect
+            back to TatianaSF, HackKit, and reusable builder workflows.
+          </div>
+          <div className="article-actions">
+            <Link className="button secondary" href="/tatianasf">
+              Creator profile
+            </Link>
+            <Link
+              className="button secondary"
+              href="/resources/tatianasf-public-reference"
+            >
+              TatianaSF reference
+            </Link>
+          </div>
+        </div>
         <div className="section-inner content-layout">
           <nav className="content-nav" aria-label="Resource sections">
             {items.map((item) => (

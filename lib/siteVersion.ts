@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.5";
+export const CURRENT_VERSION = "v1.0.6";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.6",
+    date: "2026-06-28",
+    description:
+      "Added the TatianaSF SEO preview image, profile metadata, structured data, and stronger internal creator links."
+  },
   {
     version: "v1.0.5",
     date: "2026-06-28",
