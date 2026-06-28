@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.16";
+export const CURRENT_VERSION = "v1.0.17";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.17",
+    date: "2026-06-28",
+    description:
+      "Added a light circular badge behind the homepage hero CodexSF mark for better contrast on the dark background."
+  },
   {
     version: "v1.0.16",
     date: "2026-06-28",
