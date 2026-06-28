@@ -39,8 +39,9 @@ export default function Home() {
               <span>CodexSF</span>
             </h1>
             <p className="hero-copy">
-              Community hub for builders, hackathons, and practical Codex
-              workflows in San Francisco.
+              Open-source community hub for builders, hackathons, and practical
+              Codex workflows in San Francisco. Published on GitHub under the
+              MIT License.
             </p>
             <div className="hero-actions">
               <Link className="button primary" href="/hackkit">

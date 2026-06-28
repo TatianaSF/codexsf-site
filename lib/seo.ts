@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://codexsf.com";
 export const SITE_NAME = "Codex SF";
 export const GITHUB_REPO_URL = "https://github.com/TatianaSF/codexsf-site";
+export const PROJECT_LICENSE = "MIT";
+export const PROJECT_LICENSE_URL = `${GITHUB_REPO_URL}/blob/main/LICENSE`;
 export const SITE_DESCRIPTION =
-  "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows.";
+  "Open-source community hub for San Francisco builders, hackathons, and practical Codex workflows, published on GitHub under the MIT License.";
 export const GOOGLE_SITE_VERIFICATION =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 export const GOOGLE_TAG_MANAGER_ID =
@@ -116,6 +118,7 @@ export const siteJsonLd = [
       "Open-source public website, HackKit playbook, and reusable builder resources for Codex SF.",
     url: SITE_URL,
     codeRepository: GITHUB_REPO_URL,
+    license: PROJECT_LICENSE_URL,
     image: absoluteUrl(OPEN_SOURCE_GITHUB_IMAGE.url),
     programmingLanguage: ["TypeScript", "TSX", "Markdown"],
     runtimePlatform: "Next.js",
