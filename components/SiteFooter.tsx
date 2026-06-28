@@ -6,10 +6,6 @@ export function SiteFooter() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <div className="footer-copy">
-          <SiteSignature className="footer-signature" />
-          <p>Made with ❤️ in San Francisco 🌉</p>
-        </div>
         <div className="footer-links">
           <Link href="/hackkit">HackKit</Link>
           <Link href="/events">Events</Link>
@@ -19,6 +15,10 @@ export function SiteFooter() {
           <a href={GITHUB_REPO_URL} rel="noopener noreferrer" target="_blank">
             GitHub
           </a>
+        </div>
+        <div className="footer-copy">
+          <SiteSignature className="footer-signature" />
+          <p>Made with ❤️ in San Francisco 🌉</p>
         </div>
       </div>
     </footer>

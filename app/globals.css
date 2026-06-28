@@ -837,10 +837,10 @@ img {
 }
 
 .footer-inner {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
+  justify-items: center;
+  gap: 18px;
   padding: 34px 0;
   color: var(--muted);
   font-size: 0.92rem;
@@ -849,17 +849,23 @@ img {
 .footer-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   font-weight: 700;
+  text-align: center;
 }
 
 .footer-copy {
   display: grid;
-  gap: 4px;
+  justify-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .footer-copy p {
   margin: 0;
+  text-align: center;
 }
 
 .version-badge {

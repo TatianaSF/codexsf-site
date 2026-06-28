@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.18";
+export const CURRENT_VERSION = "v1.0.19";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.19",
+    date: "2026-06-28",
+    description:
+      "Moved the footer signature block below the footer menu and centered the San Francisco note."
+  },
   {
     version: "v1.0.18",
     date: "2026-06-28",
