@@ -1,0 +1,120 @@
+name: Scheduled SEO follow-up
+
+on:
+  schedule:
+    # 09:00 America/Los_Angeles on June 30. Cron is UTC.
+    - cron: "0 16 30 6 *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  review-tatianasf-seo-cluster:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live SEO cluster and comment on reminder issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = 1;
+            const urls = [
+              "https://codexsf.com/",
+              "https://codexsf.com/tatianasf/",
+              "https://codexsf.com/resources/tatianasf-public-reference/",
+              "https://codexsf.com/resources/codex-sf-creator-notes/",
+              "https://codexsf.com/resources/san-francisco-builder-workflows/",
+              "https://codexsf.com/sitemap.xml",
+              "https://codexsf.com/robots.txt"
+            ];
+
+            const results = [];
+
+            for (const url of urls) {
+              const response = await fetch(url, {
+                headers: {
+                  "user-agent": "codexsf-seo-followup/1.0"
+                }
+              });
+              const body = await response.text();
+
+              results.push({
+                url,
+                status: response.status,
+                bytes: body.length,
+                hasTatianaSF: body.includes("TatianaSF"),
+                hasCanonical: body.includes('rel="canonical"'),
+                hasGTM: body.includes("GTM-W57BDKGX"),
+                body
+              });
+            }
+
+            const sitemap = results.find((item) => item.url.endsWith("/sitemap.xml"));
+            const sitemapUrlCount = sitemap
+              ? Array.from(sitemap.body.matchAll(/<loc>/g)).length
+              : 0;
+
+            const requiredSitemapEntries = [
+              "https://codexsf.com/tatianasf/",
+              "https://codexsf.com/resources/tatianasf-public-reference/",
+              "https://codexsf.com/resources/codex-sf-creator-notes/",
+              "https://codexsf.com/resources/san-francisco-builder-workflows/"
+            ];
+
+            const missingSitemapEntries = requiredSitemapEntries.filter(
+              (entry) => !sitemap?.body.includes(entry)
+            );
+
+            const pageRows = results
+              .filter((item) => !item.url.endsWith("/sitemap.xml") && !item.url.endsWith("/robots.txt"))
+              .map((item) => {
+                return `| ${item.url} | ${item.status} | ${item.hasCanonical ? "yes" : "no"} | ${item.hasGTM ? "yes" : "no"} | ${item.hasTatianaSF ? "yes" : "no"} |`;
+              })
+              .join("\n");
+
+            const statusOk = results.every((item) => item.status >= 200 && item.status < 400);
+            const sitemapOk = sitemapUrlCount >= 29 && missingSitemapEntries.length === 0;
+
+            const body = [
+              "## Scheduled SEO follow-up result",
+              "",
+              `Run date: ${new Date().toISOString()}`,
+              "",
+              "### Public URL checks",
+              "",
+              "| URL | HTTP | canonical | GTM | TatianaSF text |",
+              "| --- | ---: | --- | --- | --- |",
+              pageRows,
+              "",
+              "### Sitemap",
+              "",
+              `- URL count: \`${sitemapUrlCount}\``,
+              `- Required TatianaSF cluster URLs present: \`${missingSitemapEntries.length === 0 ? "yes" : "no"}\``,
+              missingSitemapEntries.length
+                ? `- Missing entries: ${missingSitemapEntries.map((entry) => `\`${entry}\``).join(", ")}`
+                : "- Missing entries: none",
+              "",
+              "### Search Console follow-up",
+              "",
+              "This automated workflow can verify public URLs and sitemap state, but it cannot read private Google Search Console performance/indexing data without Google API credentials.",
+              "",
+              "Recommended Codex follow-up:",
+              "",
+              "- Open Search Console for `https://codexsf.com/`.",
+              "- Check indexing status for the TatianaSF cluster pages.",
+              "- Check Performance queries containing `TatianaSF`.",
+              "- Decide whether to add public `sameAs` links or more internal references.",
+              "",
+              "### Overall",
+              "",
+              statusOk && sitemapOk
+                ? "✅ Public SEO cluster checks passed."
+                : "⚠️ Public SEO cluster checks need review."
+            ].join("\n");
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body
+            });
