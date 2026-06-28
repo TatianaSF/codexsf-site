@@ -58,16 +58,18 @@ function CodexIcon() {
 
 type SiteSignatureProps = {
   className?: string;
+  showBuiltWithStack?: boolean;
   showMadeWith?: boolean;
 };
 
 export function SiteSignature({
   className,
+  showBuiltWithStack = false,
   showMadeWith = true
 }: SiteSignatureProps) {
   const classes = ["site-signature", className].filter(Boolean).join(" ");
-  const label = showMadeWith
-    ? "Codex SF made with OpenAI Codex by TatianaSF"
+  const label = showMadeWith || showBuiltWithStack
+    ? "Codex SF built with OpenAI Codex by TatianaSF"
     : "Codex SF OpenAI Codex by TatianaSF";
 
   return (
@@ -82,6 +84,12 @@ export function SiteSignature({
         />
       </Link>
       {showMadeWith ? <span>Made with</span> : null}
+      {showBuiltWithStack ? (
+        <span className="signature-built-with">
+          <span>Built</span>
+          <span>with</span>
+        </span>
+      ) : null}
       <OpenAIIcon />
       <strong>OpenAI</strong>
       <span className="signature-separator" aria-hidden="true" />

@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.11";
+export const CURRENT_VERSION = "v1.0.12";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.12",
+    date: "2026-06-28",
+    description:
+      "Added a compact two-line Built with label to the header signature before the OpenAI mark."
+  },
   {
     version: "v1.0.11",
     date: "2026-06-28",

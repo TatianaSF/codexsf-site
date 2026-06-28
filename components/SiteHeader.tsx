@@ -62,7 +62,11 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="nav-shell" data-menu-open={menuOpen}>
         <div className="nav-primary-row">
-          <SiteSignature className="header-signature" showMadeWith={false} />
+          <SiteSignature
+            className="header-signature"
+            showBuiltWithStack
+            showMadeWith={false}
+          />
           <button
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
