@@ -1,6 +1,12 @@
-export const CURRENT_VERSION = "v1.0.19";
+export const CURRENT_VERSION = "v1.0.20";
 
 export const VERSION_LOG = [
+  {
+    version: "v1.0.20",
+    date: "2026-06-28",
+    description:
+      "Simplified the mobile footer signature into a single lightweight line without the framed badge."
+  },
   {
     version: "v1.0.19",
     date: "2026-06-28",

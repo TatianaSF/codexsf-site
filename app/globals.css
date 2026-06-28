@@ -1000,6 +1000,33 @@ img {
     margin-left: -36px;
   }
 
+  .footer-signature {
+    max-width: 100%;
+    min-height: 24px;
+    gap: 3px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #3d4653;
+    font-size: clamp(0.58rem, 2.7vw, 0.68rem);
+    overflow: visible;
+  }
+
+  .footer-signature .site-signature-logo {
+    width: clamp(74px, 24vw, 92px);
+    height: auto;
+  }
+
+  .footer-signature .signature-icon {
+    width: clamp(13px, 4vw, 16px);
+    height: clamp(13px, 4vw, 16px);
+  }
+
+  .footer-signature .signature-separator {
+    height: 16px;
+  }
+
   .brand-logo {
     width: 132px;
     height: 31px;
