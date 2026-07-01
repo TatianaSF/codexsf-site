@@ -3,6 +3,11 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://codexsf.com";
 export const SITE_NAME = "CodexSF";
 export const SITE_TITLE = "TatianaSF | CodexSF Open-Source Builder Hub";
+export const ENTITY_NAME = "TatianaSF";
+export const ENTITY_PATH = "/tatianasf/" as const;
+export const BRAND_QUERY = "TatianaSF";
+export const CANONICAL_PROFILE_URL = "https://tatianasf.com/";
+export const LOCATION_CONTEXT = "San Francisco builder community";
 export const GITHUB_REPO_URL = "https://github.com/TatianaSF/codexsf-site";
 export const PROJECT_LICENSE = "MIT";
 export const PROJECT_LICENSE_URL = `${GITHUB_REPO_URL}/blob/main/LICENSE`;
@@ -10,7 +15,7 @@ export const SITE_DESCRIPTION =
   "TatianaSF builds CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.";
 export const SITE_UPDATED_AT = "2026-06-30";
 export const SITE_TOPICS = [
-  "TatianaSF",
+  ENTITY_NAME,
   "CodexSF",
   "open-source builder hub",
   "San Francisco builders",
@@ -21,7 +26,7 @@ export const SITE_TOPICS = [
   "AI-readable public resources"
 ] as const;
 export const SITE_KEYWORDS = [
-  "TatianaSF",
+  BRAND_QUERY,
   "CodexSF",
   "TatianaSF CodexSF",
   "Codex SF",
@@ -36,7 +41,7 @@ export const SITE_KEYWORDS = [
 ] as const;
 export const SITE_SAME_AS = [
   GITHUB_REPO_URL,
-  "https://tatianasf.com/",
+  CANONICAL_PROFILE_URL,
   "https://www.linkedin.com/in/tatianasf",
   "https://www.instagram.com/tatianasfcom/",
   "https://x.com/TatianaSFcom",
@@ -94,6 +99,9 @@ export function createPageMetadata({
     title: absoluteTitle ? { absolute: title } : title,
     description,
     keywords: [...SITE_KEYWORDS],
+    authors: [{ name: ENTITY_NAME, url: absoluteUrl(ENTITY_PATH) }],
+    creator: ENTITY_NAME,
+    publisher: SITE_NAME,
     alternates: {
       canonical: path
     },
@@ -121,7 +129,7 @@ export const siteJsonLd = [
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: ["Codex SF", "TatianaSF CodexSF"],
+    alternateName: ["Codex SF", `${BRAND_QUERY} CodexSF`],
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     inLanguage: "en-US",
@@ -149,7 +157,7 @@ export const siteJsonLd = [
       }
     ],
     mainEntity: {
-      "@id": `${SITE_URL}/tatianasf/#person`
+      "@id": `${SITE_URL}${ENTITY_PATH}#person`
     }
   },
   {
@@ -164,9 +172,9 @@ export const siteJsonLd = [
     sameAs: [GITHUB_REPO_URL],
     founder: {
       "@type": "Person",
-      "@id": `${SITE_URL}/tatianasf/#person`,
-      name: "TatianaSF",
-      url: `${SITE_URL}/tatianasf/`,
+      "@id": `${SITE_URL}${ENTITY_PATH}#person`,
+      name: ENTITY_NAME,
+      url: absoluteUrl(ENTITY_PATH),
       image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
       sameAs: SITE_SAME_AS.filter((url) => url !== GITHUB_REPO_URL)
     }
@@ -187,8 +195,9 @@ export const siteJsonLd = [
     runtimePlatform: "Next.js",
     creator: {
       "@type": "Person",
-      name: "TatianaSF",
-      url: `${SITE_URL}/tatianasf/`
+      "@id": `${SITE_URL}${ENTITY_PATH}#person`,
+      name: ENTITY_NAME,
+      url: absoluteUrl(ENTITY_PATH)
     },
     isPartOf: {
       "@type": "WebSite",

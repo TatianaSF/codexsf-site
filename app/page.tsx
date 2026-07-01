@@ -3,11 +3,17 @@ import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import { getCollection } from "@/lib/content";
 import {
+  ENTITY_NAME,
+  ENTITY_PATH,
   createPageMetadata,
   GITHUB_REPO_URL,
   OPEN_SOURCE_GITHUB_IMAGE,
   PROJECT_LICENSE_URL,
-  SITE_TITLE
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+  SITE_URL,
+  absoluteUrl,
+  serializeJsonLd
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -22,9 +28,31 @@ export default function Home() {
   const hackkit = getCollection("hackkit").slice(0, 4);
   const events = getCollection("events").slice(0, 3);
   const resources = getCollection("resources").slice(0, 6);
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    name: SITE_TITLE,
+    url: `${SITE_URL}/`,
+    description: SITE_DESCRIPTION,
+    about: {
+      "@id": `${absoluteUrl(ENTITY_PATH)}#person`,
+      name: ENTITY_NAME
+    },
+    mainEntity: {
+      "@id": `${absoluteUrl(ENTITY_PATH)}#person`
+    },
+    isPartOf: {
+      "@id": `${SITE_URL}/#website`
+    }
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(homeJsonLd) }}
+      />
       <section className="hero">
         <div className="hero-inner">
           <div>

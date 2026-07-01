@@ -6,6 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteVersionBadge } from "@/components/SiteVersionBadge";
 import {
   DEFAULT_OG_IMAGE,
+  ENTITY_NAME,
+  ENTITY_PATH,
   GOOGLE_SITE_VERIFICATION,
   GOOGLE_TAG_MANAGER_ID,
   SITE_DESCRIPTION,
@@ -26,6 +28,9 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [...SITE_KEYWORDS],
+  authors: [{ name: ENTITY_NAME, url: ENTITY_PATH }],
+  creator: ENTITY_NAME,
+  publisher: SITE_NAME,
   alternates: {
     canonical: "/",
     types: {

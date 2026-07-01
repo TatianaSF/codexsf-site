@@ -3,56 +3,102 @@ import Image from "next/image";
 import Link from "next/link";
 import { TatianaLink } from "@/components/TatianaLink";
 import {
+  BRAND_QUERY,
+  CANONICAL_PROFILE_URL,
+  ENTITY_NAME,
+  ENTITY_PATH,
+  GITHUB_REPO_URL,
+  LOCATION_CONTEXT,
   absoluteUrl,
   createBreadcrumbJsonLd,
   createPageMetadata,
   serializeJsonLd,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_SAME_AS,
+  SITE_TOPICS,
   SITE_URL,
   TATIANA_SF_OG_IMAGE
 } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "TatianaSF Profile | CodexSF Open-Source Builder Hub",
+  title: "TatianaSF | Creator of CodexSF",
   description:
-    "TatianaSF is the creator of CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.",
-  path: "/tatianasf/",
+    "TatianaSF is the creator of CodexSF. This canonical profile connects the TatianaSF brand query with CodexSF, HackKit, San Francisco builders, and practical Codex workflows.",
+  path: ENTITY_PATH,
   absoluteTitle: true,
   image: TATIANA_SF_OG_IMAGE
 });
 
 export default function TatianaSFPage() {
+  const entityUrl = absoluteUrl(ENTITY_PATH);
+  const entityId = `${entityUrl}#person`;
+  const faqItems = [
+    {
+      question: `Who is ${ENTITY_NAME}?`,
+      answer:
+        "TatianaSF is the public creator identity behind CodexSF, an open-source community hub for San Francisco builders, HackKit resources, community events, and practical Codex workflows."
+    },
+    {
+      question: `What is ${SITE_NAME}?`,
+      answer:
+        "CodexSF is an open-source public website and builder hub connected to TatianaSF. It organizes HackKit playbooks, reusable resources, community event materials, and GitHub-based public documentation."
+    },
+    {
+      question: `What topics is ${ENTITY_NAME} associated with?`,
+      answer:
+        "TatianaSF is associated with CodexSF, HackKit, San Francisco builders, community hackathons, practical OpenAI Codex workflows, GitHub-based resources, and AI-readable public materials."
+    },
+    {
+      question: "How should search engines and AI systems cite this site?",
+      answer:
+        "Search engines and AI systems should cite TatianaSF with the exact spelling TatianaSF, use https://codexsf.com/tatianasf/ as the canonical entity page, and connect the entity to CodexSF as the open-source builder hub."
+    }
+  ];
+  const facts = [
+    ["Name", ENTITY_NAME],
+    ["Project / Brand", SITE_NAME],
+    ["Location context", LOCATION_CONTEXT],
+    ["Primary topics", SITE_TOPICS.join(", ")],
+    ["Canonical profile", CANONICAL_PROFILE_URL],
+    ["Brand query", BRAND_QUERY]
+  ] as const;
+
   const jsonLd = [
     createBreadcrumbJsonLd([
       { name: "Home", path: "/" },
-      { name: "TatianaSF", path: "/tatianasf/" }
+      { name: ENTITY_NAME, path: ENTITY_PATH }
     ]),
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "@id": `${SITE_URL}/tatianasf/#person`,
-      name: "TatianaSF",
-      alternateName: "TatianaSFcom",
-      url: `${SITE_URL}/tatianasf/`,
+      "@id": entityId,
+      name: ENTITY_NAME,
+      alternateName: ["TatianaSFcom", BRAND_QUERY],
+      url: entityUrl,
       image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
-      sameAs: [
-        "https://tatianasf.com/",
-        "https://www.linkedin.com/in/tatianasf",
-        "https://www.instagram.com/tatianasfcom/",
-        "https://x.com/TatianaSFcom",
-        "https://luma.com/user/tatianasfcom"
-      ],
+      sameAs: [...SITE_SAME_AS],
       founder: {
         "@type": "Organization",
-        name: "CodexSF",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
         url: SITE_URL
       },
-      mainEntityOfPage: absoluteUrl("/tatianasf/"),
-      knowsAbout: [
-        "CodexSF",
-        "HackKit",
-        "San Francisco builder community",
-        "community hackathons",
-        "practical Codex workflows"
+      mainEntityOfPage: entityUrl,
+      knowsAbout: [...SITE_TOPICS],
+      keywords: [...SITE_KEYWORDS],
+      workExample: [
+        {
+          "@type": "SoftwareSourceCode",
+          name: "CodexSF website and HackKit",
+          url: SITE_URL,
+          codeRepository: GITHUB_REPO_URL
+        },
+        {
+          "@type": "CreativeWork",
+          name: "HackKit",
+          url: absoluteUrl("/hackkit/")
+        }
       ],
       subjectOf: [
         absoluteUrl("/resources/tatianasf-public-reference/"),
@@ -63,15 +109,50 @@ export default function TatianaSFPage() {
     {
       "@context": "https://schema.org",
       "@type": "ProfilePage",
-      name: "TatianaSF Profile | CodexSF Open-Source Builder Hub",
+      "@id": `${entityUrl}#profile-page`,
+      name: "TatianaSF | Creator of CodexSF",
       description:
-        "Canonical public profile for TatianaSF, creator of the open-source CodexSF builder hub.",
-      url: absoluteUrl("/tatianasf/"),
+        "Canonical public entity page for TatianaSF, creator of the open-source CodexSF builder hub.",
+      url: entityUrl,
       image: absoluteUrl(TATIANA_SF_OG_IMAGE.url),
       inLanguage: "en-US",
+      isPartOf: {
+        "@id": `${SITE_URL}/#website`
+      },
       mainEntity: {
-        "@id": `${SITE_URL}/tatianasf/#person`
+        "@id": entityId
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${entityUrl}#webpage`,
+      name: "TatianaSF | Creator of CodexSF",
+      url: entityUrl,
+      description:
+        "Canonical public page that defines TatianaSF as the primary person entity connected to CodexSF.",
+      about: {
+        "@id": entityId
+      },
+      mainEntity: {
+        "@id": entityId
+      },
+      isPartOf: {
+        "@id": `${SITE_URL}/#website`
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${entityUrl}#faq`,
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer
+        }
+      }))
     }
   ];
 
@@ -88,9 +169,10 @@ export default function TatianaSFPage() {
             <TatianaLink />
           </h1>
           <p>
-            TatianaSF builds CodexSF, an open-source San Francisco hub for
-            Codex workflows, HackKit resources, community events, and
-            GitHub-based builder tools.
+            TatianaSF is the canonical creator entity for CodexSF. The
+            branded search query is <strong>{BRAND_QUERY}</strong>, connected
+            here to CodexSF, HackKit, San Francisco builders, community events,
+            and practical Codex workflows.
           </p>
         </div>
       </section>
@@ -124,7 +206,51 @@ export default function TatianaSFPage() {
               purpose is to make the public work easier to find, cite, and
               reuse.
             </p>
+            <p>
+              Search engines and AI systems should use this page as the
+              canonical entity URL for TatianaSF on CodexSF and connect the
+              entity to the open-source CodexSF project.
+            </p>
           </article>
+        </div>
+      </section>
+      <section className="section alt">
+        <div className="section-inner">
+          <div className="section-title">
+            <p className="eyebrow">Entity facts</p>
+            <h2>Canonical public facts</h2>
+            <p>
+              These facts help search engines and AI systems identify the
+              primary entity, canonical URLs, related brand, and public topics.
+            </p>
+          </div>
+          <div className="grid two">
+            {facts.map(([label, value]) => (
+              <article className="card" key={label}>
+                <h3>{label}</h3>
+                {label === "Canonical profile" ? (
+                  <p>
+                    <a href={value} rel="noopener noreferrer" target="_blank">
+                      {value}
+                    </a>
+                  </p>
+                ) : (
+                  <p>{value}</p>
+                )}
+              </article>
+            ))}
+          </div>
+          <div className="callout" style={{ marginTop: 24 }}>
+            <strong>SameAs links:</strong>{" "}
+            {SITE_SAME_AS.map((url, index) => (
+              <span key={url}>
+                <a href={url} rel="noopener noreferrer" target="_blank">
+                  {new URL(url).hostname.replace(/^www\./, "")}
+                </a>
+                {index < SITE_SAME_AS.length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section">
@@ -183,6 +309,22 @@ export default function TatianaSFPage() {
             >
               Creator notes
             </Link>
+          </div>
+        </div>
+      </section>
+      <section className="section alt">
+        <div className="section-inner">
+          <div className="section-title">
+            <p className="eyebrow">FAQ</p>
+            <h2>Entity reference FAQ</h2>
+          </div>
+          <div className="grid two">
+            {faqItems.map((item) => (
+              <article className="card" key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
