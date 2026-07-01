@@ -6,11 +6,12 @@ import {
   createPageMetadata,
   GITHUB_REPO_URL,
   OPEN_SOURCE_GITHUB_IMAGE,
-  PROJECT_LICENSE_URL
+  PROJECT_LICENSE_URL,
+  SITE_TITLE
 } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "TatianaSF | CodexSF Open-Source Builder Hub",
+  title: SITE_TITLE,
   description:
     "TatianaSF builds CodexSF, an open-source San Francisco hub for Codex workflows, HackKit resources, community events, and GitHub-based builder tools.",
   path: "/",

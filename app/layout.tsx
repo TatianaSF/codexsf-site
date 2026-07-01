@@ -9,7 +9,9 @@ import {
   GOOGLE_SITE_VERIFICATION,
   GOOGLE_TAG_MANAGER_ID,
   SITE_DESCRIPTION,
+  SITE_KEYWORDS,
   SITE_NAME,
+  SITE_TITLE,
   SITE_URL,
   serializeJsonLd,
   siteJsonLd
@@ -19,12 +21,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   title: {
-    default: SITE_NAME,
+    default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`
   },
   description: SITE_DESCRIPTION,
+  keywords: [...SITE_KEYWORDS],
   alternates: {
-    canonical: "/"
+    canonical: "/",
+    types: {
+      "application/json": [{ url: "/profile.json" }, { url: "/sections.json" }],
+      "text/plain": "/llms.txt"
+    }
   },
   manifest: "/manifest.webmanifest",
   icons: {
@@ -39,7 +46,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   },
   openGraph: {
-    title: SITE_NAME,
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: "/",
     siteName: SITE_NAME,
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_NAME,
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE.url]
   },
@@ -77,6 +84,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        <link
+          rel="alternate"
+          type="application/json"
+          title="Machine-readable profile"
+          href="/profile.json"
+        />
+        <link
+          rel="alternate"
+          type="application/json"
+          title="Machine-readable sections"
+          href="/sections.json"
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          title="LLM summary"
+          href="/llms.txt"
+        />
+      </head>
       <body>
         <GoogleTagManager containerId={GOOGLE_TAG_MANAGER_ID} />
         <script

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { aiReadableFeedUrls } from "@/lib/aiFeeds";
 import { getCollection } from "@/lib/content";
 import { SITE_URL } from "@/lib/seo";
 
@@ -15,6 +16,12 @@ const staticRoutes = [
   { path: "/log/", priority: 0.3, changeFrequency: "monthly" }
 ] as const;
 
+const machineReadableRoutes = [
+  { url: aiReadableFeedUrls.profile, priority: 0.7, changeFrequency: "weekly" },
+  { url: aiReadableFeedUrls.sections, priority: 0.7, changeFrequency: "weekly" },
+  { url: aiReadableFeedUrls.llms, priority: 0.7, changeFrequency: "weekly" }
+] as const;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const hackkitRoutes = getCollection("hackkit").map((item) => ({
     path: `/hackkit/${item.slug}/` as const,
@@ -27,10 +34,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const
   }));
 
-  return [...staticRoutes, ...hackkitRoutes, ...resourceRoutes].map((route) => ({
-    url: new URL(route.path, SITE_URL).toString(),
+  const htmlRoutes = [...staticRoutes, ...hackkitRoutes, ...resourceRoutes].map(
+    (route) => ({
+      url: new URL(route.path, SITE_URL).toString(),
+      lastModified: new Date(),
+      changeFrequency: route.changeFrequency,
+      priority: route.priority
+    })
+  );
+
+  const feedRoutes = machineReadableRoutes.map((route) => ({
+    url: route.url,
     lastModified: new Date(),
     changeFrequency: route.changeFrequency,
     priority: route.priority
   }));
+
+  return [...htmlRoutes, ...feedRoutes];
 }
